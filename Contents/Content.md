@@ -3,7 +3,7 @@
 ### **Part A**
 
 **[Unit 1](Unit_1.md):**
-Load – types and their assessment; Types of supports; Concept and types of structure – cables, trusses, beams, arches, frames; Statical determinacy; Identification of determinate and indeterminate structures based on **Degree of Redundancy (DoR)** **(3L)**
+Load – types and their assessment; Types of supports; Concept and types of structure – cables, trusses, beams, arches, frames; Statical determinacy; Identification of determinate and indeterminate structures based on Degree of Redundancy (DoR) **(3L)**
 
 📌 **[Assignment 1](Assignments/Assignment_1.md)**
 
