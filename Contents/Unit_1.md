@@ -1,6 +1,6 @@
 # **Unit 1 — Introduction to Structural Systems**
 
-### 📌 **Content**
+### 📌 **Index**
 - [Load – types and their assessment](#1-load-types--assessment)
 - [Types of supports](#2-types-of-supports)
 - [Concept and types of structures – cables, trusses, beams, arches, frames](#3-concept--types-of-structures)
@@ -15,6 +15,7 @@
 Loads are external forces applied to a structure that produce internal stresses & deformations.
 
 ### **1.1 Classification of Loads**
+
 | Type | Description | Typical Symbol | Assessment Basis |
 |---|---|---|---|
 | **Dead Load (DL)** | Permanent self-weight of structure & non-removable fixtures | \( W_d \) | Unit weight × Volume |
@@ -46,6 +47,7 @@ Example: **Design Load = DL + LL × Load Factor**
 Supports resist external loads by providing reaction forces.
 
 ### **2.1 Classification**
+
 | Support Type | Restraints Provided | Reactions | Example |
 |---|---|---|---|
 | **Pinned/Hinged** | Resists translation but **not rotation** | \( R_x, R_y \) | Beam ends, frames |
@@ -63,6 +65,7 @@ Supports resist external loads by providing reaction forces.
 A **structure** is a system designed to resist applied loads safely.
 
 ### **3.1 Classification by Form**
+
 | Structural Form | Behavior | Usage |
 |---|---|---|
 | **Cables** | Pure tension | Suspension bridges |
