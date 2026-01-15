@@ -104,4 +104,5 @@ Where:
 | Stiffness influence | No | Yes |
 | Safety | Predictable | Ductile |
 
-[⮝ Go to Top](#-unit-1-—-introduction-to-structural-systems)
+[⮝ Go to Top](#unit-1--introduction-to-structural-systems)
+
