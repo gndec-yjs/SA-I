@@ -7,8 +7,6 @@
 - [Statical determinacy](#4-statical-determinacy)
 - [Identification of determinate & indeterminate structures (Degree of Redundancy)](#5-determinacy-via-degree-of-redundancy)
 
----
-
 <a id="1-load-types--assessment"></a>
 ## **1. Load — Types & Assessment**
 
@@ -29,8 +27,6 @@ Loads are external forces applied to a structure that produce internal stresses 
 📌 *Image Placeholder:* *Load types (DL, LL, WL, EL)*  
 `![Load Types Diagram](images/load_types_placeholder.png)`
 
----
-
 ### **1.2 Load Assessment (as per IS)**
 Assessment involves:
 - **Magnitude estimation** (unit weight, density)
@@ -38,8 +34,6 @@ Assessment involves:
 - **Load combinations** (as per IS 456 / IS 875)
 
 Example: **Design Load = DL + LL × Load Factor**
-
----
 
 <a id="2-types-of-supports"></a>
 ## **2. Types of Supports**
@@ -56,8 +50,6 @@ Supports resist external loads by providing reaction forces.
 
 📌 *Image Placeholder:* *Support symbols*  
 `![Support Types Diagram](images/support_types_placeholder.png)`
-
----
 
 <a id="3-concept--types-of-structures"></a>
 ## **3. Concept & Types of Structures**
@@ -77,8 +69,6 @@ A **structure** is a system designed to resist applied loads safely.
 📌 *Image Placeholder:* *Structural forms overview*  
 `![Structural Forms Diagram](images/forms_placeholder.png)`
 
----
-
 <a id="4-statical-determinacy"></a>
 ## **4. Statical Determinacy**
 
@@ -89,8 +79,6 @@ For 2D:
 \[
 \sum F_x = 0,\quad \sum F_y = 0,\quad \sum M = 0
 \]
-
----
 
 <a id="5-determinacy-via-degree-of-redundancy"></a>
 ## **5. Determinacy via Degree of Redundancy (DoR)**
@@ -106,8 +94,6 @@ DSI = r + m - 3j
 Where:  
 `r = external reactions`, `m = internal members`, `j = joints`
 
----
-
 ### **5.2 Comparison**
 
 | Characteristic | Determinate | Indeterminate |
@@ -119,7 +105,4 @@ Where:
 | Stiffness influence | No | Yes |
 | Safety | Predictable | Ductile |
 
----
-
-### 🔗 **Back to Top**
 [⮝ Go to Index](#-index)
