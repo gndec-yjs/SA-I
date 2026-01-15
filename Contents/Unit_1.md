@@ -1,6 +1,5 @@
 # **Unit 1 — Introduction to Structural Systems**
 
-### 📌 **Index**
 - [Load – types and their assessment](#1-load-types--assessment)
 - [Types of supports](#2-types-of-supports)
 - [Concept and types of structures – cables, trusses, beams, arches, frames](#3-concept--types-of-structures)
@@ -105,4 +104,4 @@ Where:
 | Stiffness influence | No | Yes |
 | Safety | Predictable | Ductile |
 
-[⮝ Go to Index](#-index)
+[⮝ Go to Top](#-unit-1-—-introduction-to-structural-systems)
