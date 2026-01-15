@@ -3,7 +3,7 @@
 <b>B.Tech. (Civil Engineering)</b></p>
 
 <p align="center"><b>Course Code:</b> CCE108<br>
-<b>Course Title:</b> <span style="background-color:yellow">Structural</span> Analysis -I</p>
+<b>Course Title:</b> Structural Analysis -I</p>
 
 <table>
 <tr><td><b>Programme:</b> B.Tech.</td><td><b>L:</b> 3 <b>T:</b>1 <b>P:</b>2</td><td><b>Credits:</b>5</td></tr>
@@ -22,7 +22,7 @@
 
 <table>
 <tr><th>CO#</th><th>Course Outcomes</th></tr>
-<tr><td>1</td><td>Apply the concept of equilibrium in <span style="background-color:yellow">structural</span> analysis.</td></tr>
+<tr><td>1</td><td>Apply the concept of equilibrium in structural analysis.</td></tr>
 <tr><td>2</td><td>Compute displacements of structures under loads using various methods and principles</td></tr>
 <tr><td>3</td><td>Calculate internal forces within different structural forms, like trusses, beams, and frames</td></tr>
 <tr><td>4</td><td>Plot bending moment and shear force diagram</td></tr>
@@ -66,12 +66,12 @@ Concept of influence line diagram, rolling loads; Bending moment and shear force
 ---
 
 ### **Books**
-- Elementary <span style="background-color:yellow">Structural</span> Analysis by Norris Wilber  
-- Basic <span style="background-color:yellow">Structural</span> Analysis by C S Reddy  
-- Intermediate <span style="background-color:yellow">structural</span> analysis by C K Wang  
-- Indeterminate <span style="background-color:yellow">structural</span> analysis by J. Sterling Kinney Addison  
-- <span style="background-color:yellow">Structural</span> Analysis by Devdas Menon  
+- Elementary Structural Analysis by Norris Wilber  
+- Basic Structural Analysis by C S Reddy  
+- Intermediate structural analysis by C K Wang  
+- Indeterminate structural analysis by J. Sterling Kinney Addison  
+- Structural Analysis by Devdas Menon  
 - Analysis of Structures by Vazirani & Ratwani  
 - Theory of structures by B.C. Punimia  
 - Laboratory Manual on Structural Mechanics by Harvinder Singh  
-- <span style="background-color:yellow">Structural</span> Analysis Lab by Lakshman Singh
+- Structural Analysis Lab by Lakshman Singh
