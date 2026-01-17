@@ -11,113 +11,185 @@
         src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-# CE-SA-I: Structural Analysis I
-
 ## Unit 1: Introduction to Structural Systems
 
+### Index
 - [Load – Types and Their Assessment](#load--types-and-their-assessment)
 - [Types of Supports](#types-of-supports)
 - [Concept and Types of Structures](#concept-and-types-of-structures)
 - [Statical Determinacy](#statical-determinacy)
 - [Identification of Determinate and Indeterminate Structures (DoR)](#identification-of-determinate-and-indeterminate-structures-dor)
 
----
-
 ## Load – Types and Their Assessment
 
-A **load** is any external force or action applied on a structural system that causes stresses, deformation, or displacement.
+A *load* is any external action causing internal forces, deformation, or displacement in a structure.
+
+Loads must be properly identified and assessed for safe design as per relevant IS codes.
 
 ### Classification of Loads
 
-| Load Type | Description | Examples |
+| Load Type | Description | Examples | Assessment Basis |
+|---|---|---|---|
+| **Dead Load (DL)** | Permanent, due to self-weight | RCC slab, walls, finishes | Material density × volume |
+| **Live Load (LL)** | Movable and occupancy-related | People, furniture | IS 875 Part 2 |
+| **Wind Load (WL)** | Pressure due to wind action | Wind on buildings | IS 875 Part 3 |
+| **Snow Load (SL)** | Weight of snow deposition | Himalayan structures | IS 875 Part 4 |
+| **Seismic Load (EL)** | Inertial load due to earthquakes | Base shear | IS 1893 |
+| **Thermal Load** | Due to temperature variations | Expansion/Contraction | $\sigma_t = E\,\alpha\,\Delta T$ |
+| **Impact / Dynamic Load** | Sudden or shock loads | Crane loads, traffic | Impact factor |
+
+📌 **Image Placeholder:**  
+`![Classification of Loads](images/load_classification_placeholder.png)`  
+*Fig: Classification of Loads commonly acting on structures*
+
+### Load Idealization (For Analysis)
+
+Loads are converted into simplified forms for mathematical analysis:
+
+- **Point Load (P)**
+- **Uniformly Distributed Load (w)**
+- **Uniformly Varying Load (UVL)**
+- **Moment (M)**
+
+📌 **Image Placeholder:**  
+`![Load Idealization](images/load_idealization_placeholder.png)`  
+*Fig: Load idealization formats used in analysis*
+
+### Load Combination (Example per IS codes)
+
+For Limit State Design:
+
+$$ 1.5(DL + LL), \quad 1.2(DL + LL + WL) $$
+
+### Quick Summary Table
+
+| Parameter | Dead Load | Live Load |
 |---|---|---|
-| **Dead Load (DL)** | Permanent, time-invariant loads | Self-weight, walls, finishes |
-| **Live Load (LL)** | Movable, variable loads | Occupants, furniture |
-| **Environmental Loads** | Climatic or natural effects | Wind, snow, earthquake |
-| **Dynamic Loads** | Time-dependent with inertia | Machinery, vehicles |
-| **Thermal Loads** | Due to temperature variation | Expansion / Contraction |
-
-### Basic Load Assessment Concepts
-
-- **Dead Load**  
-  $DL = \gamma \times \text{Volume}$
-
-- **Live Load**  
-  As per IS 875 Part 2 (varies with building use)
-
-- **Wind Load**  
-  Depends on basic wind speed and exposure (IS 875 Part 3)
-
-- **Earthquake Load**  
-  Equivalent static base shear approach:  
-  $V_b = A_h \times W$
-
----
+| Variation | Constant | Variable |
+| Duration | Permanent | Temporary |
+| Source | Material self-weight | Occupancy |
+| Code Reference | IS 875 Part 1 | IS 875 Part 2 |
 
 ## Types of Supports
 
-Supports restrain movement and provide **reaction forces**.
+Supports provide constraints against motion, causing reaction forces.
 
-| Support Type | Restrained Movements | Reactions |
-|---|---|---|
-| **Fixed Support** | Rotation + Translation | $R_x, R_y, M$ |
-| **Pinned Support** | Translation | $R_x, R_y$ |
-| **Roller Support** | One Translation | $R_y$ or $R_x$ |
+### Support Types & Reaction Characteristics
 
-(Images can be added later as needed)
+| Type of Support | Restrained DoF | Reactions Generated | Notes |
+|---|---|---|---|
+| **Fixed** | $u_x, u_y, \theta$ | $R_x, R_y, M$ | No movement or rotation |
+| **Pinned/Hinged** | $u_x, u_y$ | $R_x, R_y$ | Rotation free |
+| **Roller** | $u_y$ | $R_y$ | Allows expansion |
+| **Link Support** | Along link axis | Single reaction | Used in trusses |
 
----
+📌 **Image Placeholder:**  
+`![Support Types](images/support_types_placeholder.png)`  
+*Fig: Common support symbols used in analysis*
 
 ## Concept and Types of Structures
 
-Structures transfer loads safely to the supports.
+A *structure* is a connected system designed to resist loads safely without excessive deformation.
 
-Common structural systems:
+### Classification Based on Form and Force Mechanism
 
-| System | Behavior | Examples |
-|---|---|---|
-| **Cables** | Tension only | Suspension bridges |
-| **Trusses** | Axial forces (Tension/Compression) | Roof trusses |
-| **Beams** | Bending + Shear | Floor beams |
-| **Arches** | Compression with horizontal thrust | Stone bridges |
-| **Frames** | Axial + Flexural | RC building frames |
+| Structural Form | Load Carrying Mechanism | Internal Forces | Examples |
+|---|---|---|---|
+| **Cable** | Pure tension | Tension only | Suspension bridges |
+| **Truss** | Axial actions | Tension/Compression | Roof trusses |
+| **Beam** | Bending action | Bending + Shear | Floors, girders |
+| **Arch** | Compression thrust | Compression + Thrust | Masonry arches |
+| **Frame** | Combined action | Axial + Shear + Bending | Buildings, portals |
 
----
+📌 **Image Placeholder:**  
+`![Structural Forms](images/structural_forms_placeholder.png)`  
+*Fig: Different structural systems based on load transfer*
 
 ## Statical Determinacy
 
-A structure is **statically determinate** if all reactions and internal forces can be found using only **equilibrium equations**.
+A structure is **statically determinate** if all unknown reactions and internal forces can be obtained using only the **equilibrium equations**.
 
-For 2D systems:
+For a 2D system, available equilibrium equations are:
 
-$$ \sum F_x = 0,\quad \sum F_y = 0,\quad \sum M = 0 $$
+$$ \sum F_x = 0, \quad \sum F_y = 0, \quad \sum M = 0 $$
 
----
+If more unknowns exist than available equations, structure is **statically indeterminate**.
+
+### Comparison Table
+
+| Feature | Determinate Structure | Indeterminate Structure |
+|---|---|---|
+| Solved by | Equilibrium only | Equilibrium + Compatibility |
+| Reaction Dependence on Material | No | Yes |
+| Effect of Temp./Settlement | No internal force | Induces internal forces |
+| Stiffness Influence | No | Yes |
+| Safety under Overloads | Less | More (redundancy) |
 
 ## Identification of Determinate and Indeterminate Structures (DoR)
 
 ### Degree of Redundancy (DoR)
 
-For 2D structures:
+**Degree of Redundancy (DoR)** or **Degree of Static Indeterminacy (DSI)** is defined as:
 
-$$ DoR = r - 3 $$
+> *The number of excess unknown reactions or internal forces over available equilibrium equations.*
+
+
+### 1. **External Static Indeterminacy**
+
+For a **2D rigid structure**:
+
+$$ DSI_{ext} = r - 3 $$
 
 Where:  
-- $r =$ Number of unknown support reactions  
-- $3 =$ Number of independent equilibrium equations in 2D
+$r =$ number of external reaction components
 
-### Examples
 
-- **Simply Supported Beam**  
-  $r = 3$ → $DoR = 3 - 3 = 0$ → Determinate
+### 2. **Internal Static Indeterminacy**
 
-- **Propped Cantilever**  
-  $r = 4$ → $DoR = 4 - 3 = 1$ → Indeterminate
+For **pin-jointed trusses**:
 
-### Summary Table
+$$ DSI_{int} = m - (2j - 3) $$
 
-| Type | Condition | Example |
-|---|---|---|
-| **Determinate** | $DoR = 0$ | Simply supported beam |
-| **Indeterminate** | $DoR > 0$ | Fixed beams, continuous beams |
+Where:  
+$m =$ members, $j =$ joints
+
+### 3. **Combined Indeterminacy (General 2D Frame)**
+
+$$ DSI = (r + m) - 3j $$
+
+### Example Summary Table
+
+| Structure | Reactions (r) | DSI | Classification |
+|---|---|---|---|
+| Simply Supported Beam | 3 | $3-3=0$ | Determinate |
+| Cantilever | 3 | $3-3=0$ | Determinate |
+| Propped Cantilever | 4 | $4-3=1$ | Indeterminate |
+| Fixed Beam | 6 | $6-3=3$ | Indeterminate |
+| Two-Span Continuous Beam | 4 | $4-3=1$ | Indeterminate |
+
+📌 **Image Placeholder:**  
+`![Determinate vs Indeterminate](images/determinacy_placeholder.png)`  
+*Fig: Examples of determinate and indeterminate beams*
+
+### Quick Definitions
+
+- **Statically Determinate Structure:**  
+  A structure whose reactions and internal forces can be obtained using only equilibrium equations.
+
+- **Statically Indeterminate Structure:**  
+  A structure where number of unknowns > number of equilibrium equations.
+
+- **Degree of Redundancy (DoR) / DSI:**  
+  Number of additional unknown forces beyond equilibrium requirements.
+
+- **External Indeterminacy:**  
+  Excess support reactions.
+
+- **Internal Indeterminacy:**  
+  Excess internal member forces (common in frames & trusses).
+
+
+
+### ➤ Back to Top
+[Go to Index](#index)
 
