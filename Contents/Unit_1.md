@@ -216,22 +216,25 @@ $$ DSI = (r + m) - 3j $$
 `![Determinate vs Indeterminate](images/determinacy_placeholder.png)`  
 *Fig: Examples of determinate and indeterminate beams*
 
-### Quick Definitions
+Perfect! Here’s a **crisp, exam-friendly version with “i.e.” style statements”** for quick recall:
 
-- **Statically Determinate Structure:**  
-  A structure whose reactions and internal forces can be obtained using only equilibrium equations.
+### **Definitions**
 
-- **Statically Indeterminate Structure:**  
-  A structure where number of unknowns > number of equilibrium equations.
+* **Statically Determinate Structure:**
+  A structure whose **reactions and internal forces can be found using equilibrium equations alone**, i.e., **number of unknowns = number of independent equilibrium equations**.
 
-- **Degree of Redundancy (DoR) / DSI:**  
-  Number of additional unknown forces beyond equilibrium requirements.
+* **Statically Indeterminate Structure:**
+  A structure in which the **number of unknowns > number of independent equilibrium equations**, i.e., requires compatibility conditions in addition to equilibrium.
 
-- **External Indeterminacy:**  
-  Excess support reactions.
+* **Degree of Redundancy (DoR) / Degree of Static Indeterminacy (DSI):**
+  The **number of unknowns exceeding the available equilibrium equations**, i.e., **DSI = total unknowns − equilibrium equations**.
 
-- **Internal Indeterminacy:**  
-  Excess internal member forces (common in frames & trusses).
+* **External Indeterminacy:**
+  **Excess support reactions** beyond what equilibrium can determine, i.e., **DSI due to supports**.
+
+* **Internal Indeterminacy:**
+  **Excess internal member forces** beyond equilibrium, i.e., **DSI due to members**, common in continuous beams, frames, and trusses.
+
 
 [➤ Go to Index](#index)
 
