@@ -30,7 +30,7 @@ Loads must be properly identified and assessed for safe design as per relevant I
 
 | Load Type | Description | Examples | Assessment Basis |
 |---|---|---|---|
-| **Dead Load (DL)** | Permanent, due to self-weight | RCC slab, walls, finishes | Material density × volume |
+| **Dead Load (DL)** | Permanent, due to self-weight (Material density × volume) | RCC slab, walls, finishes | IS 875 Part 1 |
 | **Live Load (LL)** | Movable and occupancy-related | People, furniture | IS 875 Part 2 |
 | **Wind Load (WL)** | Pressure due to wind action | Wind on buildings | IS 875 Part 3 |
 | **Snow Load (SL)** | Weight of snow deposition | Himalayan structures | IS 875 Part 4 |
