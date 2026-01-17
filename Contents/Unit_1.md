@@ -1,4 +1,3 @@
-<!-- MathJax Configuration for HTML Rendering -->
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({
     tex2jax: {
@@ -7,128 +6,118 @@
     }
   });
 </script>
-
+    
 <script type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+        src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
-<a id="top"></a>
+# CE-SA-I: Structural Analysis I
 
-# **Unit 1 — Introduction to Structural Systems**
+## Unit 1: Introduction to Structural Systems
 
-## 📌 **Syllabus Content (Anchored)**  
-Load – types and their assessment; Types of supports; Concept and types of structure – cables, trusses, beams, arches, frames; Statical determinacy; Identification of determinate and indeterminate structures based on Degree of Redundancy (DoR)
+- [Load – Types and Their Assessment](#load--types-and-their-assessment)
+- [Types of Supports](#types-of-supports)
+- [Concept and Types of Structures](#concept-and-types-of-structures)
+- [Statical Determinacy](#statical-determinacy)
+- [Identification of Determinate and Indeterminate Structures (DoR)](#identification-of-determinate-and-indeterminate-structures-dor)
 
 ---
 
-## **1. Load — Types and Their Assessment**
+## Load – Types and Their Assessment
 
-Loads are actions applied to structures that produce internal forces and deformations.
+A **load** is any external force or action applied on a structural system that causes stresses, deformation, or displacement.
 
-Common load categories include:
+### Classification of Loads
 
-| Load Type | Description | Example |
+| Load Type | Description | Examples |
 |---|---|---|
-| Dead Load | Permanent, self-weight | Weight of beams, slabs |
-| Live Load | Movable, time-dependent | People, furniture |
-| Environmental Load | From natural effects | Wind, temperature |
-| Dynamic Load | Time-varying inertial effects | Seismic, machinery |
+| **Dead Load (DL)** | Permanent, time-invariant loads | Self-weight, walls, finishes |
+| **Live Load (LL)** | Movable, variable loads | Occupants, furniture |
+| **Environmental Loads** | Climatic or natural effects | Wind, snow, earthquake |
+| **Dynamic Loads** | Time-dependent with inertia | Machinery, vehicles |
+| **Thermal Loads** | Due to temperature variation | Expansion / Contraction |
 
-Mathematically, loads may be expressed as:
+### Basic Load Assessment Concepts
 
-- Point Load: $P$ (in Newtons)
-- Uniformly Distributed Load: $w$ (in $kN/m$)
-- Uniformly Varying Load: $w(x)$
+- **Dead Load**  
+  $DL = \gamma \times \text{Volume}$
 
-**Assessment parameters include:**
+- **Live Load**  
+  As per IS 875 Part 2 (varies with building use)
 
-- Magnitude
-- Direction
-- Distribution
-- Duration
-- Point of application
+- **Wind Load**  
+  Depends on basic wind speed and exposure (IS 875 Part 3)
 
-📷 *[Load diagram placeholder]*
-
----
-
-## **2. Types of Supports**
-
-Supports resist structural movements and produce reactions.
-
-| Support Type | Restraints | Reactions | Symbol |
-|---|---|---|---|
-| Roller | One translation | $R_y$ | 🔵 |
-| Pin | Two translations | $R_x, R_y$ | ⚫ |
-| Fixed | All translations + rotation | $R_x, R_y, M$ | ⛔ |
-
-📷 *[Support diagram placeholder]*
+- **Earthquake Load**  
+  Equivalent static base shear approach:  
+  $V_b = A_h \times W$
 
 ---
 
-## **3. Concepts & Types of Structures**
+## Types of Supports
 
-Based on geometry & force transfer:
+Supports restrain movement and provide **reaction forces**.
 
-| Structure | Description | Example |
+| Support Type | Restrained Movements | Reactions |
 |---|---|---|
-| Cables | Carry tension only | Suspension bridges |
-| Trusses | Two-force members | Roof trusses |
-| Beams | Bending dominant | Floor beams |
-| Frames | Axial + shear + bending | Building frames |
-| Arches | Compression dominant | Stone bridges |
+| **Fixed Support** | Rotation + Translation | $R_x, R_y, M$ |
+| **Pinned Support** | Translation | $R_x, R_y$ |
+| **Roller Support** | One Translation | $R_y$ or $R_x$ |
 
-📷 *[Structure-type diagram placeholder]*
+(Images can be added later as needed)
 
 ---
 
-## **4. Statical Determinacy**
+## Concept and Types of Structures
 
-A structure is **statically determinate** if equilibrium equations alone determine internal forces & reactions.
+Structures transfer loads safely to the supports.
 
-For planar structures:
+Common structural systems:
 
-$$
-\sum F_x = 0,\ \sum F_y = 0,\ \sum M = 0
-$$
-
-Total equations available = 3
-
----
-
-## **5. Determinate vs. Indeterminate Structures**
-
-| Feature | Determinate | Indeterminate |
+| System | Behavior | Examples |
 |---|---|---|
-| Equilibrium suffices | ✔️ | ❌ Requires compatibility |
-| Redundancy (DoR) | 0 | ≥ 1 |
-| Analysis | Simple | Complex |
-| Example | Simply supported beam | Fixed beam |
+| **Cables** | Tension only | Suspension bridges |
+| **Trusses** | Axial forces (Tension/Compression) | Roof trusses |
+| **Beams** | Bending + Shear | Floor beams |
+| **Arches** | Compression with horizontal thrust | Stone bridges |
+| **Frames** | Axial + Flexural | RC building frames |
 
 ---
 
-## **6. Degree of Redundancy (DoR)**
+## Statical Determinacy
 
-DoR quantifies excess reactions / internal forces beyond equilibrium.
+A structure is **statically determinate** if all reactions and internal forces can be found using only **equilibrium equations**.
 
-For planar structures:
+For 2D systems:
 
-$$
-DoR = R - 3
-$$
+$$ \sum F_x = 0,\quad \sum F_y = 0,\quad \sum M = 0 $$
+
+---
+
+## Identification of Determinate and Indeterminate Structures (DoR)
+
+### Degree of Redundancy (DoR)
+
+For 2D structures:
+
+$$ DoR = r - 3 $$
 
 Where:  
-- $R =$ number of reaction components  
-- `3` = available equilibrium equations ($\sum F_x, \sum F_y, \sum M$)
+- $r =$ Number of unknown support reactions  
+- $3 =$ Number of independent equilibrium equations in 2D
 
-**Examples:**
+### Examples
 
-- Simply Supported Beam → $R = 3 → DoR = 0$ (Determinate)
-- Fixed Beam → $R = 4 → DoR = 1$ (Indeterminate)
+- **Simply Supported Beam**  
+  $r = 3$ → $DoR = 3 - 3 = 0$ → Determinate
 
-📷 *[DoR illustration placeholder]*
+- **Propped Cantilever**  
+  $r = 4$ → $DoR = 4 - 3 = 1$ → Indeterminate
 
----
+### Summary Table
 
-### 🔗 **Back to Top**
-[⬆ Go to Top](#top)
+| Type | Condition | Example |
+|---|---|---|
+| **Determinate** | $DoR = 0$ | Simply supported beam |
+| **Indeterminate** | $DoR > 0$ | Fixed beams, continuous beams |
+
