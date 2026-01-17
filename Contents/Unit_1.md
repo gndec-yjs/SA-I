@@ -188,8 +188,5 @@ $$ DSI = (r + m) - 3j $$
 - **Internal Indeterminacy:**  
   Excess internal member forces (common in frames & trusses).
 
-
-
-### ➤ Back to Top
-[Go to Index](#index)
+[➤ Go to Index](#index)
 
