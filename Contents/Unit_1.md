@@ -1,108 +1,134 @@
+<!-- MathJax Configuration for HTML Rendering -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+<a id="top"></a>
+
 # **Unit 1 — Introduction to Structural Systems**
 
-- [Load – types and their assessment](#1-load-types--assessment)
-- [Types of supports](#2-types-of-supports)
-- [Concept and types of structures – cables, trusses, beams, arches, frames](#3-concept--types-of-structures)
-- [Statical determinacy](#4-statical-determinacy)
-- [Identification of determinate & indeterminate structures (Degree of Redundancy)](#5-determinacy-via-degree-of-redundancy)
+## 📌 **Syllabus Content (Anchored)**  
+Load – types and their assessment; Types of supports; Concept and types of structure – cables, trusses, beams, arches, frames; Statical determinacy; Identification of determinate and indeterminate structures based on Degree of Redundancy (DoR)
 
-<a id="1-load-types--assessment"></a>
-## **1. Load — Types & Assessment**
+---
 
-Loads are external forces applied to a structure that produce internal stresses & deformations.
+## **1. Load — Types and Their Assessment**
 
-### **1.1 Classification of Loads**
+Loads are actions applied to structures that produce internal forces and deformations.
 
-| Type | Description | Typical Symbol | Assessment Basis |
-|---|---|---|---|
-| **Dead Load (DL)** | Permanent self-weight of structure & non-removable fixtures | \( W_d \) | Unit weight × Volume |
-| **Live Load (LL)** | Occupancy & usage loads | \( W_l \) | IS 875 Part 2 provisions |
-| **Wind Load (WL)** | Pressure due to wind actions | \( W_w \) | IS 875 Part 3 calculations |
-| **Snow Load (SL)** | Accumulated snow weight | \( W_s \) | IS 875 Part 4 |
-| **Seismic Load (EL)** | Earthquake-induced inertia forces | \( W_e \) | IS 1893 spectral method |
-| **Impact Load** | Sudden or shock loading | — | Impact coefficients |
-| **Temperature Load** | Thermal expansion/contraction | — | \( \Delta T \), restraint condition based |
+Common load categories include:
 
-📌 *Image Placeholder:* *Load types (DL, LL, WL, EL)*  
-`![Load Types Diagram](images/load_types_placeholder.png)`
+| Load Type | Description | Example |
+|---|---|---|
+| Dead Load | Permanent, self-weight | Weight of beams, slabs |
+| Live Load | Movable, time-dependent | People, furniture |
+| Environmental Load | From natural effects | Wind, temperature |
+| Dynamic Load | Time-varying inertial effects | Seismic, machinery |
 
-### **1.2 Load Assessment (as per IS)**
-Assessment involves:
-- **Magnitude estimation** (unit weight, density)
-- **Distribution** (point load, UDL, UVL, moment)
-- **Load combinations** (as per IS 456 / IS 875)
+Mathematically, loads may be expressed as:
 
-Example: **Design Load = DL + LL × Load Factor**
+- Point Load: $P$ (in Newtons)
+- Uniformly Distributed Load: $w$ (in $kN/m$)
+- Uniformly Varying Load: $w(x)$
 
-<a id="2-types-of-supports"></a>
+**Assessment parameters include:**
+
+- Magnitude
+- Direction
+- Distribution
+- Duration
+- Point of application
+
+📷 *[Load diagram placeholder]*
+
+---
+
 ## **2. Types of Supports**
 
-Supports resist external loads by providing reaction forces.
+Supports resist structural movements and produce reactions.
 
-### **2.1 Classification**
-
-| Support Type | Restraints Provided | Reactions | Example |
+| Support Type | Restraints | Reactions | Symbol |
 |---|---|---|---|
-| **Pinned/Hinged** | Resists translation but **not rotation** | \( R_x, R_y \) | Beam ends, frames |
-| **Roller** | Resists **one direction translation** only | \( R_y \) | Expansion joints |
-| **Fixed** | Resists translation & rotation | \( R_x, R_y, M \) | Encased column |
+| Roller | One translation | $R_y$ | 🔵 |
+| Pin | Two translations | $R_x, R_y$ | ⚫ |
+| Fixed | All translations + rotation | $R_x, R_y, M$ | ⛔ |
 
-📌 *Image Placeholder:* *Support symbols*  
-`![Support Types Diagram](images/support_types_placeholder.png)`
+📷 *[Support diagram placeholder]*
 
-<a id="3-concept--types-of-structures"></a>
-## **3. Concept & Types of Structures**
+---
 
-A **structure** is a system designed to resist applied loads safely.
+## **3. Concepts & Types of Structures**
 
-### **3.1 Classification by Form**
+Based on geometry & force transfer:
 
-| Structural Form | Behavior | Usage |
+| Structure | Description | Example |
 |---|---|---|
-| **Cables** | Pure tension | Suspension bridges |
-| **Trusses** | Axial forces only | Roof trusses, bridges |
-| **Beams** | Bending & shear | Floors, girders |
-| **Arches** | Compression dominant | Masonry bridges |
-| **Frames** | Axial + Bending + Shear | Multi-storey buildings |
+| Cables | Carry tension only | Suspension bridges |
+| Trusses | Two-force members | Roof trusses |
+| Beams | Bending dominant | Floor beams |
+| Frames | Axial + shear + bending | Building frames |
+| Arches | Compression dominant | Stone bridges |
 
-📌 *Image Placeholder:* *Structural forms overview*  
-`![Structural Forms Diagram](images/forms_placeholder.png)`
+📷 *[Structure-type diagram placeholder]*
 
-<a id="4-statical-determinacy"></a>
+---
+
 ## **4. Statical Determinacy**
 
-A structure is **statically determinate** if internal forces & reactions can be found by **equilibrium equations alone**.
+A structure is **statically determinate** if equilibrium equations alone determine internal forces & reactions.
 
-### **4.1 Equilibrium Conditions**
-For 2D:
-\[
-\sum F_x = 0,\quad \sum F_y = 0,\quad \sum M = 0
-\]
+For planar structures:
 
-<a id="5-determinacy-via-degree-of-redundancy"></a>
-## **5. Determinacy via Degree of Redundancy (DoR)**
+$$
+\sum F_x = 0,\ \sum F_y = 0,\ \sum M = 0
+$$
 
-### **5.1 Rule for Determinacy**
-Degree of Static Indeterminacy (DSI):
+Total equations available = 3
 
-For **beams/frames (2D):**
-\[
-DSI = r + m - 3j
-\]
+---
+
+## **5. Determinate vs. Indeterminate Structures**
+
+| Feature | Determinate | Indeterminate |
+|---|---|---|
+| Equilibrium suffices | ✔️ | ❌ Requires compatibility |
+| Redundancy (DoR) | 0 | ≥ 1 |
+| Analysis | Simple | Complex |
+| Example | Simply supported beam | Fixed beam |
+
+---
+
+## **6. Degree of Redundancy (DoR)**
+
+DoR quantifies excess reactions / internal forces beyond equilibrium.
+
+For planar structures:
+
+$$
+DoR = R - 3
+$$
 
 Where:  
-`r = external reactions`, `m = internal members`, `j = joints`
+- $R =$ number of reaction components  
+- `3` = available equilibrium equations ($\sum F_x, \sum F_y, \sum M$)
 
-### **5.2 Comparison**
+**Examples:**
 
-| Characteristic | Determinate | Indeterminate |
-|---|---|---|
-| Unknowns ≤ Equations | ✔ | ✖ |
-| Solved by equilibrium only | ✔ | ✖ (needs compatibility) |
-| Analysis methods | Simple | Matrix/energy methods |
-| Effect of temp./support settlement | No internal force | Causes internal forces |
-| Stiffness influence | No | Yes |
-| Safety | Predictable | Ductile |
+- Simply Supported Beam → $R = 3 → DoR = 0$ (Determinate)
+- Fixed Beam → $R = 4 → DoR = 1$ (Indeterminate)
 
-[⮝ Go to Top](#unit-1--introduction-to-structural-systems)
+📷 *[DoR illustration placeholder]*
 
+---
+
+### 🔗 **Back to Top**
+[⬆ Go to Top](#top)
