@@ -18,7 +18,7 @@
 - [Types of Supports](#types-of-supports)
 - [Concept and Types of Structures](#concept-and-types-of-structures)
 - [Statical Determinacy](#statical-determinacy)
-- [Identification of Determinate and Indeterminate Structures (DoR)](#identification-of-determinate-and-indeterminate-structures-dor)
+- [Identification of Determinate and Indeterminate Structures based on degree of redundancy (DoR)](#identification-of-determinate-and-indeterminate-structures-based-on-degree-of-redundancy-dor)
 
 ## Load – Types and Their Assessment
 
@@ -125,7 +125,7 @@ If more unknowns exist than available equations, structure is **statically indet
 | Stiffness Influence | No | Yes |
 | Safety under Overloads | Less | More (redundancy) |
 
-## Identification of Determinate and Indeterminate Structures (DoR)
+## Identification of Determinate and Indeterminate Structures based on degree of redundancy (DoR)
 
 ### Degree of Redundancy (DoR)
 
