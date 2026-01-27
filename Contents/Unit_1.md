@@ -335,8 +335,8 @@ where $m_i$ = number of members meeting at the $i^{th}$ pin joint.
 |---|---|---|
 | **PIN-JOINTED STRUCTURE** | Plane Frame | $D_{si} = m - (2j - 3)$ |
 |  | Space Frame | $D_{si} = m - (3j - 6)$ |
-| **RIGID-JOINTED STRUCTURE** | Plane Frame | $D_{si} = 3c$ |
-|  | Space Frame | $D_{si} = 6c$ |
+| **RIGID-JOINTED STRUCTURE** | Plane Frame | $D_{si} = 3c$ or $D_{si} = 3m - (3j - 3)$ |
+|  | Space Frame | $D_{si} = 6c$ or or $D_{si} = 6m - (6j - 6)$ |
 | **HYBRID STRUCTURE** | Plane Frame | $D_{si} = 3c - \sum(m - 1)$ |
 |  | Space Frame | $D_{si} = 6c - \sum 3(m - 1)$ |
 
