@@ -3,7 +3,7 @@
 | **[Contents](Contents/Content.md)** | **[Syllabus](Contents/Syllabus.md)** | **[Tutorial Sheets](Contents/Tutorial_Sheets.md)** | **[Assignments](Contents/Assignments.md)** | **[Contact](Contents/Contact.md)** | 
 
 <span style="color:red; font-weight:bold; animation: blinker 1s linear infinite;">
-🚨 **New Tutorial Sheets are now available. Submission is due next week. For details — [Click Here](Contents/Tutorial_Sheets.md)**
+🚨 **New Tutorial Sheets are now available. For details on due dates and submission instructions — [Click Here](Contents/Tutorial_Sheets.md)**
 </span>
 
 <style>
