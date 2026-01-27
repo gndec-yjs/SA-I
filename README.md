@@ -2,6 +2,15 @@
 
 | **[Contents](Contents/Content.md)** | **[Syllabus](Contents/Syllabus.md)** | **[Tutorial Sheets](Contents/Tutorial_Sheets.md)** | **[Assignments](Contents/Assignments.md)** | **[Contact](Contents/Contact.md)** | 
 
+<span style="color:red; font-weight:bold; animation: blinker 1s linear infinite;">
+🚨 **New Tutorial Sheets are now available. Submission is due next week. For details — [Click Here](Contents/Tutorial_Sheets.md)**
+</span>
+
+<style>
+@keyframes blinker {
+  50% { opacity: 0; }
+}
+</style>  
 
 ![SA-I](Contents/Images/SA-I.png)
 
