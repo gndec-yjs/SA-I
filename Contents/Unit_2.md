@@ -94,8 +94,6 @@ where $w(x)$ is the load intensity (positive downward as per common convention).
 
 ## Standard SFD/BMD Results (Quick Reference)
 
-*(Useful for exam and fast checking of answers. Assume span $L$.)*
-
 ### Simply Supported Beam (SSB)
 
 | Case | Maximum Shear | Maximum Bending Moment | Location of $M_{max}$ |
