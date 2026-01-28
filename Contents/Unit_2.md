@@ -149,15 +149,75 @@ When a beam is loaded, it bends and develops:
 - **Deflection ($y$):** transverse displacement of a point on the beam  
 - **Slope / Rotation ($\theta$):** rotation of the tangent to the elastic curve  
 
-### Elastic Curve Relations
+## Elastic Curve Relations (Differential Equation of Deflection)
 
-For small deflections (Euler–Bernoulli beam theory):
+For a straight prismatic beam undergoing **small deflection**, the **differential equation of the elastic curve** (Euler–Bernoulli beam theory) is:
 
-$$ \theta = \frac{dy}{dx} $$
-$$ \frac{d^2y}{dx^2} = \frac{M(x)}{EI} $$
+$$ EI\,\frac{d^2y}{dx^2}=M(x) $$
 
 where  
-$E$ = modulus of elasticity, $I$ = moment of inertia, and $EI$ = flexural rigidity.
+$y$ = deflection at a distance $x$ from the reference origin,  
+$E$ = modulus of elasticity,  
+$I$ = second moment of area,  
+$EI$ = flexural rigidity.
+
+### Curvature–Slope–Deflection Relation
+
+The curvature of the elastic curve is defined as:
+
+$$ \kappa=\frac{1}{R} $$
+
+For small slopes $(\theta \ll 1)$, the curvature is approximately:
+
+$$ \kappa=\frac{d^2y}{dx^2} $$
+
+and slope is:
+
+$$ \theta=\frac{dy}{dx} $$
+
+## Relations Between Load, Shear, Moment, Slope, Curvature and Deflection
+
+<div style="border:1px solid #000; padding:12px; border-radius:6px;">
+
+**(1) Rate of Loading → Shear**
+
+$$ \boxed{\frac{dV}{dx}=-w(x)} $$
+
+**(2) Shear → Moment**
+
+$$ \boxed{\frac{dM}{dx}=V(x)} $$
+
+**(3) Moment → Curvature**
+
+$$ \boxed{\kappa=\frac{1}{R}=\frac{M(x)}{EI}} $$
+
+**(4) Curvature → Slope**
+
+$$ \boxed{\frac{d\theta}{dx}=\kappa=\frac{M(x)}{EI}} $$
+
+**(5) Slope → Deflection**
+
+$$ \boxed{\theta=\frac{dy}{dx}} $$
+
+**(6) Combined Beam Differential Equation (Deflection Form)**
+
+$$ \boxed{EI\,\frac{d^2y}{dx^2}=M(x)} $$
+
+**(7) Higher-Order Form Linking Load to Deflection**
+
+$$ \boxed{EI\,\frac{d^3y}{dx^3}=V(x)} $$
+$$ \boxed{EI\,\frac{d^4y}{dx^4}=-w(x)} $$
+
+</div>
+
+### Sign Note (Common Convention)
+
+If $w(x)$ is taken positive downward, then:
+
+- $\dfrac{dV}{dx}=-w(x)$  
+- $\dfrac{dM}{dx}=V(x)$  
+
+(Keep the sign convention consistent throughout the problem.)
 
 ## Methods of Computing Deflections
 
