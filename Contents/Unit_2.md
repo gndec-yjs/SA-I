@@ -20,6 +20,7 @@
 - [Point of Contraflexure (POC)](#point-of-contraflexure-poc)
 - [Displacements: Deflection and Rotation](#displacements-deflection-and-rotation)
 - [Methods of Computing Deflections](#methods-of-computing-deflections)
+- [Double Integration Method](#double-integration-method)
 
 ## Internal Forces in Determinate Structures
 
@@ -151,131 +152,531 @@ When a beam is loaded, it bends and develops:
 
 ## Elastic Curve Relations (Differential Equation of Deflection)
 
-For a straight prismatic beam undergoing **small deflection**, the **differential equation of the elastic curve** (Euler–Bernoulli beam theory) is:
+### **Bending Equation**
 
-$$ EI\,\frac{d^2y}{dx^2}=M(x) $$
+From bending theory,
+
+$$ \frac{M}{I} = \frac{E}{R} $$
+
+Since curvature $\dfrac{1}{R} = \dfrac{d^2y}{dx^2}$ for small deflections,
+
+$$ M = EI\,\frac{d^2y}{dx^2} $$
+
+This is the **fundamental differential equation of the elastic curve** of a straight beam.
+
+### **Differential Equation of Deflection**
+
+\[
+\boxed{EI\,\frac{d^2y}{dx^2} = M(x)}
+\]
 
 where  
-$y$ = deflection at a distance $x$ from the reference origin,  
-$E$ = modulus of elasticity,  
-$I$ = second moment of area,  
-$EI$ = flexural rigidity.
+$y$ = deflection at distance $x$  
+$E$ = modulus of elasticity  
+$I$ = moment of inertia  
+$EI$ = flexural rigidity  
 
-### Curvature–Slope–Deflection Relation
+### **Relation Between Shear Force and Deflection**
 
-The curvature of the elastic curve is defined as:
+Differentiating bending equation w.r.t. $x$:
 
-$$ \kappa=\frac{1}{R} $$
+$$ \frac{dM}{dx} = EI\,\frac{d^3y}{dx^3} $$
 
-For small slopes $(\theta \ll 1)$, the curvature is approximately:
+But,
 
-$$ \kappa=\frac{d^2y}{dx^2} $$
+$$ \frac{dM}{dx} = V(x) $$
 
-and slope is:
+Therefore,
 
-$$ \theta=\frac{dy}{dx} $$
+\[
+\boxed{V(x) = EI\,\frac{d^3y}{dx^3}}
+\]
 
-## Relations Between Load, Shear, Moment, Slope, Curvature and Deflection
+### **Relation Between Load Intensity and Deflection**
+
+Differentiating shear force w.r.t. $x$:
+
+$$ \frac{dV}{dx} = EI\,\frac{d^4y}{dx^4} $$
+
+But,
+
+$$ \frac{dV}{dx} = w(x) $$
+
+Therefore,
+
+\[
+\boxed{w(x) = EI\,\frac{d^4y}{dx^4}}
+\]
+
+### **Complete Relationship Chain**
 
 <div style="border:1px solid #000; padding:12px; border-radius:6px;">
 
-**(1) Rate of Loading → Shear**
-
-$$ \boxed{\frac{dV}{dx}=-w(x)} $$
-
-**(2) Shear → Moment**
-
-$$ \boxed{\frac{dM}{dx}=V(x)} $$
-
-**(3) Moment → Curvature**
-
-$$ \boxed{\kappa=\frac{1}{R}=\frac{M(x)}{EI}} $$
-
-**(4) Curvature → Slope**
-
-$$ \boxed{\frac{d\theta}{dx}=\kappa=\frac{M(x)}{EI}} $$
-
-**(5) Slope → Deflection**
-
-$$ \boxed{\theta=\frac{dy}{dx}} $$
-
-**(6) Combined Beam Differential Equation (Deflection Form)**
-
-$$ \boxed{EI\,\frac{d^2y}{dx^2}=M(x)} $$
-
-**(7) Higher-Order Form Linking Load to Deflection**
-
-$$ \boxed{EI\,\frac{d^3y}{dx^3}=V(x)} $$
-$$ \boxed{EI\,\frac{d^4y}{dx^4}=-w(x)} $$
+\[
+\boxed{
+\begin{aligned}
+\text{Deflection:} &\quad y \\
+\text{Slope:} &\quad \theta = \frac{dy}{dx} \\
+\text{Curvature:} &\quad \frac{1}{R} = \frac{d^2y}{dx^2} \\
+\text{Bending Moment:} &\quad M = EI\,\frac{d^2y}{dx^2} \\
+\text{Shear Force:} &\quad V = EI\,\frac{d^3y}{dx^3} \\
+\text{Rate of Loading:} &\quad w = EI\,\frac{d^4y}{dx^4}
+\end{aligned}
+}
+\]
 
 </div>
 
-### Sign Note (Common Convention)
+### **Important Exam Note**
 
-If $w(x)$ is taken positive downward, then:
+> The beam deflection problem is solved by integrating  
+> $$ EI\,\frac{d^4y}{dx^4} = w(x) $$  
+> and applying appropriate **boundary conditions** on deflection and slope.
 
-- $\dfrac{dV}{dx}=-w(x)$  
-- $\dfrac{dM}{dx}=V(x)$  
+### **Sign Convention Note**
 
-(Keep the sign convention consistent throughout the problem.)
+If downward load $w(x)$ is taken positive, then:
 
-## Methods of Computing Deflections
+\[
+\frac{dV}{dx} = w(x), \quad \frac{dM}{dx} = V(x)
+\]
 
-Deflection of determinate beams can be computed using the following methods:
+(Keep sign convention consistent throughout analysis.)
 
-- **Direct Integration Method**
-- **Moment–Area Method**
-- **Conjugate Beam Method**
-- **Energy Methods** (e.g., strain energy, Castigliano’s theorem, unit load method)
+## Methods of Computing Structural Deflections
 
-### Quick Comparison of Methods
+Determination of structural displacements (deflection and rotation) is an essential part of structural analysis.  
+Depending on the type of structure and loading, deflections can be computed using **geometric methods** or **energy methods**.
+
+## **A) Geometric Methods**
+
+These methods use the **elastic curve relations** directly and are best suited for **determinate beams**.
+
+### **Methods included in syllabus (highlighted):**
+
+- <u>**Direct Integration Method**</u>  
+ 
+- <u>**Moment–Area Method**</u>
+
+- <u>**Conjugate Beam Method**</u>
+
+### Other geometric approaches:
+- Macaulay’s Method (for discontinuous loads)
+
+### **1. Direct Integration Method (Double Integration & Macaulay’s Method)**
+
+Based on the fundamental relation:
+
+$$ EI\,\frac{d^2y}{dx^2}=M(x) $$
+
+By integrating twice and applying boundary conditions, slope and deflection are obtained.  
+Macaulay’s method is a convenient extension to handle multiple discontinuous loads in a single equation.
+
+### **2. Moment–Area Method**
+
+Uses areas and first moments of the $M/EI$ diagram.
+
+**Theorems:**
+
+1. Change in slope between two points = Area under $M/EI$ diagram  
+2. Deflection at a point = Moment of $M/EI$ area about that point
+
+Efficient for beams with piecewise loading.
+
+### **3. Conjugate Beam Method**
+
+An imaginary **conjugate beam** is created where:
+
+- Load on conjugate beam = $M/EI$ diagram of real beam  
+- Shear in conjugate beam = slope in real beam  
+- Moment in conjugate beam = deflection in real beam
+
+Very useful for beams with multiple segments.
+
+## **B) Energy Methods**
+
+Energy methods are particularly effective for **trusses, frames, and complex loading systems**, where geometric methods become lengthy.
+
+### **Methods included in syllabus:**
+
+- <u>**Strain Energy Method**</u>  
+- <u>**Castigliano’s Theorem**</u>  
+- <u>**Unit Load Method**</u>  
+- Virtual Work Principle  
+- Maxwell–Betti Reciprocal Theorem  
+
+### **1. Strain Energy Method**
+
+Deflection is obtained by differentiating total strain energy $U$ with respect to applied load.
+
+### **2. Castigliano’s Theorem**
+
+For linearly elastic structures:
+
+$$ \delta = \frac{\partial U}{\partial P} $$
+
+where  
+$\delta$ = deflection at load point  
+$P$ = applied load  
+
+### **3. Unit Load Method**
+
+A virtual unit load is applied at the point of desired displacement.  
+Deflection is computed using internal force work relations.
+
+### **4. Maxwell–Betti Reciprocal Theorem**
+
+States that the deflection at point A due to load at B equals deflection at B due to same load at A.
+
+## **Quick Comparison of Deflection Methods**
 
 | Method | Best Used For | Key Idea | Output |
 |---|---|---|---|
-| Direct integration | Simple beams with piecewise $M(x)$ | Integrate $M/EI$ to get $y$ | Slope & deflection |
-| Moment–area | Beams with known $M/EI$ diagram | Areas and moments of $M/EI$ diagram | Change in slope & deflection |
-| Conjugate beam | Beams with multiple segments | Convert deflection problem into shear/moment problem | Slope & deflection |
-| Energy methods | Trusses/frames/beams; complex loads | Work–energy / strain energy | Deflection at a point |
+| **Direct Integration** | Simple determinate beams | Integrate $M/EI$ | Slope & deflection |
+| **Moment–Area** | Beams with known $M/EI$ diagram | Area & centroid of $M/EI$ | Change in slope & deflection |
+| **Conjugate Beam** | Multi-segment beams | Convert deflection → shear/moment problem | Slope & deflection |
+| **Energy Methods** | Trusses, frames, complex beams | Work–energy relations | Deflection at a point |
 
-<img src="images/deflection_methods_placeholder.png" width="700" />
+### **Exam Tip**
 
-*Fig: Overview of deflection calculation methods*
+> **Geometric methods** are preferred for **determinate beams**,  
+> while **energy methods** are preferred for **frames and trusses**.
 
-## Direct Integration Method
+## **Double Integration Method**
 
-The governing equation:
+## Direct Integration Method – Fundamental Relations
 
-$$ EI\frac{d^2y}{dx^2} = M(x) $$
+From bending theory, the **bending moment at any section** of a beam is related to deflection by the differential equation:
 
-Steps:
-1. Write $M(x)$ for the beam (piecewise if needed).  
-2. Integrate twice to obtain $\theta(x)=dy/dx$ and $y(x)$.  
-3. Apply boundary conditions (supports/fixity) to evaluate constants.  
+$$ M = EI\,\frac{d^2y}{dx^2} $$
 
-## Moment–Area Method
+or
 
-Two theorems:
+$$ \frac{d^2y}{dx^2} = \frac{M(x)}{EI} $$
 
-1. **Change in slope** between two points equals the **area** under $M/EI$ between those points.  
-2. **Deflection of a point** relative to tangent at another point equals the **moment of area** of $M/EI$ between the points.
+This is the **basic differential equation of the elastic curve**.
 
-## Conjugate Beam Method
+### **First Integration — Slope Equation**
 
-A fictitious **conjugate beam** is formed such that:
+Integrating once with respect to $x$:
 
-- Load on conjugate beam $= M/EI$ of real beam  
-- Shear in conjugate beam corresponds to slope in real beam  
-- Moment in conjugate beam corresponds to deflection in real beam  
+$$ \frac{dy}{dx} = \int \frac{M(x)}{EI}\,dx + C_1 $$
 
-Support conditions change accordingly (fixed ↔ free, etc.)
+where  
+$\dfrac{dy}{dx} = \theta$ = **slope of the elastic curve**,  
+$C_1$ = constant of integration determined from boundary conditions.
 
-## Energy Methods
+### **Second Integration — Deflection Equation**
 
-Energy methods are powerful for deflection at a specific point.
+Integrating again:
 
-Key idea:
-- Strain energy stored in bending, axial and shear is used.
-- Unit load method / Castigliano’s theorem are widely used.
+$$ y = \int\!\!\int \frac{M(x)}{EI}\,dx\,dx + C_1 x + C_2 $$
+
+where  
+$y$ = **deflection of the beam**,  
+$C_1,\;C_2$ = constants obtained from support boundary conditions.
+
+### **Summary (Direct Integration Method)**
+
+<div style="border:1px solid #000; padding:12px; border-radius:6px;">
+
+$$
+\boxed{
+\begin{aligned}
+M(x) &= EI\,\frac{d^2y}{dx^2} \\[6pt]
+\theta(x) &= \frac{dy}{dx} = \int \frac{M(x)}{EI}\,dx \\[6pt]
+y(x) &= \int\!\!\int \frac{M(x)}{EI}\,dx\,dx
+\end{aligned}
+}
+$$
+
+</div>
+
+### **Exam Tip**
+
+> In the **Direct Integration Method**,  
+> integrate $M/EI$ **once** to obtain **slope**,  
+> integrate **twice** to obtain **deflection**,  
+> then apply boundary conditions to evaluate constants.
+
+## Simply Supported Beam with Central Point Load — Double Integration Method
+
+Consider a simply supported beam $AB$ of span $l$ carrying a **central point load** $W$ at midspan $C$.
+
+<img width="443" height="157" alt="image" src="https://github.com/user-attachments/assets/a4ce6ba4-78eb-4861-9565-5e76bc4b84d5" />
+
+*Fig: Simply supported beam with a central point load*
+
+### Step 1: Support Reactions
+
+By symmetry,
+
+$$ R_A = R_B = \frac{W}{2} $$
+
+### Step 2: Bending Moment Expression
+
+Take a section at a distance $x$ from the **left support $A$**.
+
+For $0 \le x \le \frac{l}{2}$ (left half):
+
+$$ M(x) = R_A x = \frac{W}{2}x $$
+
+By symmetry, the same form applies for the right half, but for derivation we proceed with $0\le x\le l/2$ and use symmetry.
+
+### Step 3: Differential Equation of Elastic Curve
+
+Using the bending equation,
+
+$$ EI\,\frac{d^2y}{dx^2} = M(x) $$
+
+Substitute $M(x)=\dfrac{W}{2}x$:
+
+$$ EI\,\frac{d^2y}{dx^2} = \frac{W}{2}x \qquad (1) $$
+
+### Step 4: First Integration (Slope)
+
+Integrate Eq. (1) w.r.t. $x$:
+
+$$ EI\,\frac{dy}{dx} = \frac{W}{4}x^2 + C_1 \qquad (2) $$
+
+At the centre $C$, slope is zero due to symmetry:
+
+$$ x=\frac{l}{2},\;\; \frac{dy}{dx}=0 $$
+
+Substitute in Eq. (2):
+
+$$ 0 = \frac{W}{4}\left(\frac{l}{2}\right)^2 + C_1
+= \frac{Wl^2}{16} + C_1 $$
+
+Hence,
+
+$$ C_1 = -\frac{Wl^2}{16} $$
+
+Substitute $C_1$ in Eq. (2):
+
+$$ EI\,\frac{dy}{dx} = \frac{W}{4}x^2 - \frac{Wl^2}{16} \qquad (3) $$
+
+Therefore the slope equation is:
+
+$$ \theta(x)=\frac{dy}{dx}=\frac{1}{EI}\left(\frac{W}{4}x^2-\frac{Wl^2}{16}\right) $$
+
+### Maximum Slope (at Supports)
+
+At $A$: $x=0$
+
+$$ EI\,\theta_A = 0-\frac{Wl^2}{16} $$
+
+$$ \boxed{\theta_A = -\frac{Wl^2}{16EI}} $$
+
+At $B$ (by symmetry):
+
+$$ \boxed{\theta_B = +\frac{Wl^2}{16EI}} $$
+
+(negative sign indicates rotation in opposite sense as per sign convention.)
+
+### Step 5: Second Integration (Deflection)
+
+Integrate Eq. (3) w.r.t. $x$:
+
+$$ EI\,y = \frac{W}{12}x^3 - \frac{Wl^2}{16}x + C_2 \qquad (4) $$
+
+At support $A$: $x=0$, deflection $y=0$:
+
+$$ 0 = 0 - 0 + C_2 \Rightarrow C_2 = 0 $$
+
+Hence,
+
+$$ EI\,y = \frac{W}{12}x^3 - \frac{Wl^2}{16}x \qquad (5) $$
+
+So the deflection equation is:
+
+$$ y(x)=\frac{1}{EI}\left(\frac{W}{12}x^3-\frac{Wl^2}{16}x\right) $$
+
+### Maximum Deflection (at Midspan)
+
+At centre $C$: $x=\dfrac{l}{2}$
+
+$$ EI\,y_C = \frac{W}{12}\left(\frac{l}{2}\right)^3 - \frac{Wl^2}{16}\left(\frac{l}{2}\right) $$
+
+$$ EI\,y_C = \frac{Wl^3}{96} - \frac{Wl^3}{32}
+= \frac{Wl^3}{96} - \frac{3Wl^3}{96}
+= -\frac{2Wl^3}{96}
+= -\frac{Wl^3}{48} $$
+
+Therefore,
+
+$$ \boxed{y_C = -\frac{Wl^3}{48EI}} $$
+
+Magnitude of maximum deflection:
+
+$$ \boxed{|y_{max}|=\frac{Wl^3}{48EI}} $$
+
+(Negative sign indicates downward deflection.)
+
+## Final Results (For Quick Use)
+
+<div style="border:1px solid #000; padding:12px; border-radius:6px;">
+
+$$
+\boxed{
+\begin{aligned}
+R_A &= R_B = \frac{W}{2} \\[6pt]
+\theta_A &= -\frac{Wl^2}{16EI},\qquad \theta_B = +\frac{Wl^2}{16EI} \\[6pt]
+y_{max} &= y_C = -\frac{Wl^3}{48EI}
+\end{aligned}}
+$$
+
+</div>
+
+## Example Problem — Simply Supported Beam with Central Point Load
+
+### Problem Statement
+
+A simply supported beam of span **3 m** is subjected to a **central point load of 10 kN**.  
+Find:
+
+1. **Maximum slope** of the beam  
+2. **Maximum deflection** of the beam  
+
+**Given Data:**
+
+- Span, $l = 3\,\text{m} = 3000\,\text{mm}$  
+- Central load, $W = 10\,\text{kN} = 10,000\,\text{N}$  
+- Moment of inertia, $I = 12 \times 10^6 \,\text{mm}^4$  
+- Modulus of elasticity, $E = 200\,\text{GPa} = 200 \times 10^3 \,\text{N/mm}^2$
+
+### Solution
+
+For a simply supported beam with a central point load:
+
+**Maximum slope (at supports):**
+
+$$ \theta_{max} = \frac{Wl^2}{16EI} $$
+
+**Maximum deflection (at midspan):**
+
+$$ y_{max} = \frac{Wl^3}{48EI} $$
+
+#### (1) Maximum Slope
+
+$$
+\theta_A = \frac{Wl^2}{16EI}
+= \frac{10,000 \times (3000)^2}
+{16 \times 200\times10^3 \times 12\times10^6}
+$$
+
+$$
+\boxed{\theta_A = 0.0023 \text{ radians}}
+$$
+
+By symmetry:
+
+$$ \theta_B = 0.0023 \text{ radians} $$
+
+#### (2) Maximum Deflection
+
+$$
+y_C = \frac{Wl^3}{48EI}
+= \frac{10,000 \times (3000)^3}
+{48 \times 200\times10^3 \times 12\times10^6}
+$$
+
+$$
+\boxed{y_C = 2.34 \text{ mm}}
+$$
+
+### Answers
+
+<div style="border:1px solid #000; padding:10px; border-radius:6px;">
+
+$$
+\boxed{
+\begin{aligned}
+\theta_{max} &= 0.0023 \text{ radians} \\
+y_{max} &= 2.34 \text{ mm (downward)}
+\end{aligned}
+}
+$$
+
+</div>
+
+
+### Exam Tip
+
+> Always convert all quantities to **consistent units** before substitution.  
+> Maximum slope occurs at **supports**, and maximum deflection occurs at **midspan** for a centrally loaded simply supported beam.
+
+## Example Problem — Load Required for Given Central Deflection
+
+### Problem Statement
+
+A wooden beam **140 mm wide** and **240 mm deep** has a span of **4 m**.  
+Determine the **load $W$** that must be applied at the **centre** to cause a **deflection of 10 mm** at the centre of the beam.  
+
+Take **$E = 6$ GPa**.
+
+### Given Data
+
+- Width, $b = 140 \text{ mm}$  
+- Depth, $d = 240 \text{ mm}$  
+- Span, $l = 4 \text{ m} = 4000 \text{ mm}$  
+- Central deflection, $y_C = 10 \text{ mm}$  
+- Modulus of elasticity,  
+  $E = 6 \text{ GPa} = 6000 \text{ N/mm}^2$
+
+### Step 1: Moment of Inertia of Beam Section
+
+For a rectangular section,
+
+$$ I = \frac{bd^3}{12} $$
+
+Substituting,
+
+$$
+I = \frac{140 \times (240)^3}{12}
+= 1.613 \times 10^8 \text{ mm}^4
+$$
+
+### Step 2: Deflection Formula
+
+For a simply supported beam with a **central point load**,
+
+$$ y_C = \frac{Wl^3}{48EI} $$
+
+Given $y_C = 10$ mm. Substituting values:
+
+$$
+10 = \frac{W(4000)^3}
+{48 \times 6000 \times 1.613\times10^8}
+$$
+
+### Step 3: Solve for Load $W$
+
+$$
+W = \frac{10 \times 48 \times 6000 \times 1.613\times10^8}
+{(4000)^3}
+$$
+
+$$
+\boxed{W = 7258.5 \text{ N}}
+$$
+
+or
+
+$$
+\boxed{W \approx 7.25 \text{ kN}}
+$$
+
+### Answers
+
+<div style="border:1px solid #000; padding:10px; border-radius:6px;">
+
+$$
+\boxed{W = 7.25 \text{ kN}}
+$$
+
+</div>
+
 
 
 [➤ Go to Index](#index)
