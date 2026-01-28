@@ -378,8 +378,6 @@ $C_1,\;C_2$ = constants obtained from support boundary conditions.
 
 ### **Summary (Direct Integration Method)**
 
-<div style="border:1px solid #000; padding:12px; border-radius:6px;">
-
 $$
 \boxed{
 \begin{aligned}
@@ -515,8 +513,6 @@ $$ \boxed{|y_{max}|=\frac{Wl^3}{48EI}} $$
 
 ## Final Results (For Quick Use)
 
-<div style="border:1px solid #000; padding:12px; border-radius:6px;">
-
 $$
 \boxed{
 \begin{aligned}
@@ -586,8 +582,6 @@ $$
 $$
 
 ### Answers
-
-<div style="border:1px solid #000; padding:10px; border-radius:6px;">
 
 $$
 \boxed{
@@ -667,15 +661,6 @@ $$
 \boxed{W \approx 7.25 \text{ kN}}
 $$
 
-### Answers
-
-<div style="border:1px solid #000; padding:10px; border-radius:6px;">
-
-$$
-\boxed{W = 7.25 \text{ kN}}
-$$
-
-</div>
 
 
 
