@@ -21,6 +21,7 @@
 - [Displacements: Deflection and Rotation](#displacements-deflection-and-rotation)
 - [Methods of Computing Deflections](#methods-of-computing-deflections)
 - [Double Integration Method](#double-integration-method)
+- [Moment Area Method](#moment-area-method)
 
 ## Internal Forces in Determinate Structures
 
@@ -53,7 +54,7 @@ A clear sign convention is essential for correct SFD/BMD and for avoiding sign e
 - **Shear Force:** Clockwise $(+)$, Anticlockwise $(-)$  
 - **Bending Moment:** Sagging $(+)$, Hogging $(-)$  
 
-<img width="1361" height="545" alt="image" src="https://github.com/user-attachments/assets/2836e766-e894-45a5-bd0b-ae3a64b752a6" />
+<img width="907" height="363" alt="image" src="https://github.com/user-attachments/assets/c6cde39f-c688-4595-b656-bdf059fb1e04" />
 
 *Fig: Sign convention for axial force, shear force and bending moment*
 
@@ -661,6 +662,352 @@ or
 $$
 \boxed{W \approx 7.25 \text{ kN}}
 $$
+
+## Moment Area Method
+
+The **Moment–Area Method** is a geometric method used to determine **slopes and deflections** in beams.  
+It is based on two fundamental theorems which relate the **area and moment of the $M/EI$ diagram** to slope and deflection of the elastic curve.
+
+## Moment–Area Theorems (or Mohr's Theorems)
+
+### **Theorem 1 — Change in Slope**
+
+**Statement:**  
+The **change in slope** between any two points on a beam is equal to the **area of the $M/EI$ diagram** between those two points.
+
+Let $C$ and $D$ be two points on a beam under flexure. Then,
+
+$$
+\theta_{CD} = \int_C^D \frac{M(x)}{EI}\,dx
+$$
+
+**Where:**
+
+- $M(x)$ = Bending moment at section  
+- $E$ = Young’s modulus  
+- $I$ = Moment of inertia  
+- $EI$ = Flexural rigidity  
+- $\theta_{CD}$ = Change in slope between points $C$ and $D$
+
+**Interpretation:**  
+The **area under the $M/EI$ curve** between two points gives the **change in slope**.
+
+### **Theorem 2 — Deflection**
+
+**Statement:**  
+The **deflection at a point** on a beam (measured from the tangent drawn at another point) is equal to the **moment of the $M/EI$ diagram** between the two points about the point where deflection is required.
+
+If deflection at point $C$ is measured from the tangent at point $D$:
+
+$$
+\Delta_C = \int_C^D x \frac{M(x)}{EI}\,dx
+$$
+
+**Where:**
+
+- $x$ = Distance of elemental area from the reference point  
+- $\Delta_C$ = Deflection at point $C$
+
+**Interpretation:**  
+The **first moment of area** of the $M/EI$ diagram gives the **deflection**.
+
+<img width="693" height="726" alt="image" src="https://github.com/user-attachments/assets/443a484e-7565-4803-9112-161f062cc8fa" />
+
+*Fig: Elastic curve of a beam and corresponding $M/EI$ diagram for Moment–Area Method*
+
+## Derivation of Moment–Area Theorems
+
+From the **flexure formula**:
+
+$$
+\frac{M}{I} = \frac{E}{R}
+$$
+
+Rearranging:
+
+$$
+\frac{1}{R} = \frac{M}{EI}
+$$
+
+<img width="1168" height="520" alt="image" src="https://github.com/user-attachments/assets/ab3d45df-5a46-42e3-9769-f6ece2552418" />
+
+For small deflections:
+
+$$
+d\theta = \frac{dx}{R}
+$$
+
+Substituting:
+
+$$
+d\theta = \frac{M}{EI} dx
+$$
+
+Integrating between $C$ and $D$:
+
+$$
+\theta_{CD} = \int_C^D \frac{M(x)}{EI} dx
+$$
+
+Hence, **Theorem 1 is proved.**
+
+Now, elemental deflection is:
+
+$$
+d\Delta = x\,d\theta
+$$
+
+Substituting $d\theta$:
+
+$$
+d\Delta = x \frac{M}{EI} dx
+$$
+
+Integrating:
+
+$$
+\Delta_C = \int_C^D x \frac{M(x)}{EI} dx
+$$
+
+Hence, **Theorem 2 is proved.**
+
+## Key Relations Summary
+
+$$
+\boxed{\theta = \int \frac{M}{EI} dx}
+$$
+
+$$
+\boxed{\Delta = \int x \frac{M}{EI} dx}
+$$
+
+## Important Notes
+
+- Method is **purely geometric**
+- Requires known **bending moment diagram**
+- Best suited for **statically determinate beams**
+- Avoids solving differential equations directly
+
+## Example — Cantilever Beam with Point Load at Free End (Moment–Area Method)
+
+### Problem Statement
+
+Determine the **rotation** and **deflection** at the **free end** of a cantilever beam of span $L$, subjected to a **point load $W$** at the free end.
+
+### Solution: 
+
+### Beam and Bending Moment Diagram
+
+<img width="555" height="156" alt="image" src="https://github.com/user-attachments/assets/c3a2e376-6ac0-4bc0-8325-796532d21cd8" />
+
+*Fig: Cantilever beam with point load $W$ at free end*
+
+<img width="543" height="206" alt="image" src="https://github.com/user-attachments/assets/f374bf7d-d987-45d5-ab37-b9e07af7c70a" />
+
+*Fig: Bending moment diagram for cantilever with end point load*
+
+### Step 1: Bending Moment Expression
+
+Take $x$ measured from the **free end**.
+
+At a section at distance $x$ from the free end:
+
+$$
+M(x) = Wx
+$$
+
+Hence, the $M/EI$ diagram is **triangular** with maximum ordinate at the fixed end equal to:
+
+$$
+\left(\frac{M}{EI}\right)_{\max} = \frac{WL}{EI}
+$$
+
+## Rotation at the Free End
+
+Slope at the fixed end is zero:
+
+$$
+\theta_A = 0
+$$
+
+From **Moment–Area Theorem 1**:
+
+$$
+\theta_B = \int_0^L \frac{M(x)}{EI}\,dx
+$$
+
+Substitute $M(x)=Wx$:
+
+$$
+\theta_B = \int_0^L \frac{Wx}{EI}\,dx
+= \frac{W}{EI}\int_0^L x\,dx
+$$
+
+$$
+\theta_B = \frac{W}{EI}\left[\frac{x^2}{2}\right]_0^L
+= \frac{WL^2}{2EI}
+$$
+
+**Rotation direction:** Clockwise at free end.
+
+## Deflection at the Free End
+
+From **Moment–Area Theorem 2**:
+
+$$
+\Delta_B = \int_0^L x\,\frac{M(x)}{EI}\,dx
+$$
+
+Substitute $M(x)=Wx$:
+
+$$
+\Delta_B = \int_0^L x\frac{Wx}{EI}\,dx
+= \frac{W}{EI}\int_0^L x^2\,dx
+$$
+
+$$
+\Delta_B = \frac{W}{EI}\left[\frac{x^3}{3}\right]_0^L
+= \frac{WL^3}{3EI}
+$$
+
+**Deflection direction:** Downward at free end.
+
+$$
+\boxed{
+\begin{aligned}
+\theta_B &= \frac{WL^2}{2EI} \quad \text{(rotation at free end)} \\[6pt]
+\Delta_B &= \frac{WL^3}{3EI} \quad \text{(deflection at free end)}
+\end{aligned}
+}
+$$
+
+</div>
+
+## Note: (Triangle $M/EI$ Diagram)
+
+For a triangular diagram of base $L$ and maximum ordinate $h$:
+
+- Area = $\frac{1}{2}Lh$
+- Centroid lies at $L/3$ from the larger ordinate end  
+  (or $2L/3$ from the zero end)
+
+This provides a quick shortcut for moment–area calculations.
+
+### Note:
+
+> Always remember fixed-end slope = **zero boundary condition**.
+
+
+## Example — Cantilever Beam with Full UDL (Moment–Area Method)
+
+### Problem Statement
+
+Determine the **rotation** and **deflection** at the **free end** of a cantilever beam of span $L$, subjected to a **uniformly distributed load $w$** over the entire length.
+
+### Solution:
+
+### Beam and Bending Moment Diagram
+
+<img width="706" height="227" alt="image" src="https://github.com/user-attachments/assets/fe668056-a03e-4fab-91aa-32fa7cc3f32e" />
+
+*Fig: Cantilever beam with UDL over entire span*
+
+<img width="706" height="227" alt="image" src="https://github.com/user-attachments/assets/31f538c4-54d7-41a1-b12b-db67b507eabe" />
+
+*Fig: Parabolic bending moment diagram for cantilever with full UDL*
+
+### Step 1: Bending Moment Expression
+
+Taking $x$ measured from the **free end**:
+
+$$
+M(x) = \frac{w x^2}{2}
+$$
+
+## Rotation at the Free End
+
+Let $A$ be the fixed end and $B$ the free end.
+
+Since slope at the fixed end is zero:
+
+$$
+\theta_A = 0
+$$
+
+From **Moment–Area Theorem 1**:
+
+$$
+\theta_B = \int_0^L \frac{M(x)}{EI} dx
+$$
+
+Substitute $M(x)$:
+
+$$
+\theta_B = \int_0^L \frac{w x^2}{2EI} dx
+$$
+
+$$
+\theta_B = \frac{w}{2EI} \int_0^L x^2 dx
+$$
+
+$$
+\theta_B = \frac{w}{2EI}\left[\frac{x^3}{3}\right]_0^L
+$$
+
+$$
+\theta_B = \frac{wL^3}{6EI}
+$$
+
+**Rotation direction:** Clockwise at free end.
+
+## Deflection at the Free End
+
+From **Moment–Area Theorem 2**:
+
+$$
+\Delta_B = \int_0^L x \frac{M(x)}{EI} dx
+$$
+
+Substitute $M(x)$:
+
+$$
+\Delta_B = \int_0^L x \frac{w x^2}{2EI} dx
+$$
+
+$$
+\Delta_B = \frac{w}{2EI} \int_0^L x^3 dx
+$$
+
+$$
+\Delta_B = \frac{w}{2EI}\left[\frac{x^4}{4}\right]_0^L
+$$
+
+$$
+\Delta_B = \frac{wL^4}{8EI}
+$$
+
+**Deflection direction:** Downward at free end.
+
+$$
+\boxed{
+\begin{aligned}
+\theta_B &= \frac{wL^3}{6EI} \quad \text{(rotation at free end)} \\[6pt]
+\Delta_B &= \frac{wL^4}{8EI} \quad \text{(deflection at free end)}
+\end{aligned}
+}
+$$
+
+</div>
+
+## Note: (From Geometry of Parabolic $M/EI$ Diagram)
+
+For a **parabolic $M/EI$ diagram**:
+
+- **Area** = $\frac{1}{3} \times (\text{base}) \times (\text{maximum ordinate})$
+- **Centroid** lies at **$3L/4$** from the end where ordinate is zero
+
+This simplifies manual calculations in moment–area problems.
+
 
 
 [➤ Go to Index](#index)
