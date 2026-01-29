@@ -39,7 +39,7 @@ For beams and frames in the plane, the primary internal actions at a section are
 | Shear force | $V$ | Transverse loads | Sliding tendency between sections |
 | Bending moment | $M$ | Transverse loads / moments | Curvature (bending) |
 
-<img src="images/internal_forces_placeholder.png" width="650" />
+<img width="500" height="372" alt="image" src="https://github.com/user-attachments/assets/de71c387-a6a2-4d89-aa98-c082f9102208" />
 
 *Fig: Internal actions at a beam section (Axial force, Shear force, Bending moment)*
 
@@ -49,12 +49,25 @@ A clear sign convention is essential for correct SFD/BMD and for avoiding sign e
 
 ### Sign Convention Used in This Course
 
+- **Axial Force:** Tension $(+)$, Compression $(-)$ 
 - **Shear Force:** Clockwise $(+)$, Anticlockwise $(-)$  
 - **Bending Moment:** Sagging $(+)$, Hogging $(-)$  
 
-<img src="images/sign_convention_placeholder.png" width="650" />
+<img width="1361" height="545" alt="image" src="https://github.com/user-attachments/assets/2836e766-e894-45a5-bd0b-ae3a64b752a6" />
 
-*Fig: Sign convention for shear force and bending moment*
+*Fig: Sign convention for axial force, shear force and bending moment*
+
+#### Axial Force
+
+An axial force is regarded as positive if it tends to tier the member at the section under consideration. Such a force is regarded as tensile, while the member is said to be subjected to axial tension. On the other hand, an axial force is considered negative if it tends to crush the member at the section being considered. Such force is regarded as compressive, while the member is said to be in axial compression.
+
+#### Shear Force
+
+A shear force that tends to move the left of the section upward or the right side of the section downward will be regarded as positive. Similarly, a shear force that has the tendency to move the left side of the section downward or the right side upward will be considered a negative shear force (see Figure 4.2c and Figure 4.2d).
+
+#### Bending Moment
+
+A bending moment is considered positive if it tends to cause concavity upward (sagging). If the bending moment tends to cause concavity downward (hogging), it will be considered a negative bending moment
 
 > **Note:** Different textbooks may adopt different sign conventions. Always remain consistent within a problem.
 
@@ -88,13 +101,15 @@ where $w(x)$ is the load intensity (positive downward as per common convention).
 | UVL (triangular/trapezoidal) | Parabolic variation | Cubic variation |
 | Applied moment $M$ | No change in shear | Sudden jump in BM by $M$ |
 
-<img src="images/sfd_bmd_shapes_placeholder.png" width="700" />
+<img width="512" height="640" alt="image" src="https://github.com/user-attachments/assets/829f998d-37a4-4f07-9752-7193781cbefc" />
 
 *Fig: Typical SFD and BMD shapes for common loadings*
 
 ## Standard SFD/BMD Results (Quick Reference)
 
 ### Simply Supported Beam (SSB)
+
+<img width="582" height="169" alt="image" src="https://github.com/user-attachments/assets/fdc75e83-2284-4af0-8879-b9688b378ffa" />
 
 | Case | Maximum Shear | Maximum Bending Moment | Location of $M_{max}$ |
 |---|---:|---:|---|
@@ -107,6 +122,9 @@ where $w(x)$ is the load intensity (positive downward as per common convention).
 
 ### Cantilever Beam (Fixed at one end, free at other)
 
+<img width="582" height="172" alt="image" src="https://github.com/user-attachments/assets/116e9fbb-19c0-4f89-8ca5-c90f75c26d80" />
+
+
 | Case | Shear at Fixed End | BM at Fixed End (Maximum) |
 |---|---:|---:|
 | Point load $P$ at free end | $V_{max}=P$ | $M_{max}=PL$ |
@@ -114,16 +132,12 @@ where $w(x)$ is the load intensity (positive downward as per common convention).
 | Triangular UVL (0 at free to $w$ at fixed) | $V_{max}=\frac{wL}{2}$ | $M_{max}=\frac{wL^2}{6}$ |
 | End moment $M$ at free end | $V=0$ | $M_{max}=M$ |
 
-<img src="images/standard_cases_placeholder.png" width="700" />
-
-*Fig: Standard beam cases for quick reference*
-
 ## Overhang Beams (Introduction)
 
 An **overhanging beam** is a beam which extends beyond one or both supports.  
 Such beams commonly exhibit **negative bending moments near supports**, and may develop a **point of contraflexure**.
 
-<img src="images/overhang_beam_placeholder.png" width="650" />
+<img width="558" height="308" alt="image" src="https://github.com/user-attachments/assets/78b0f58a-3403-4b3a-8f68-f4692a8ddcb0" />
 
 *Fig: Typical overhanging beam*
 
@@ -186,9 +200,10 @@ $$ \frac{dM}{dx} = V(x) $$
 
 Therefore,
 
-\[
+$$
 \boxed{V(x) = EI\,\frac{d^3y}{dx^3}}
-\]
+$$
+
 
 ### **Relation Between Load Intensity and Deflection**
 
@@ -202,13 +217,11 @@ $$ \frac{dV}{dx} = w(x) $$
 
 Therefore,
 
-\[
+$$
 \boxed{w(x) = EI\,\frac{d^4y}{dx^4}}
-\]
+$$
 
 ### **Complete Relationship Chain**
-
-<div style="border:1px solid #000; padding:12px; border-radius:6px;">
 
 \[
 \boxed{
@@ -235,9 +248,9 @@ Therefore,
 
 If downward load $w(x)$ is taken positive, then:
 
-\[
+$$
 \frac{dV}{dx} = w(x), \quad \frac{dM}{dx} = V(x)
-\]
+$$
 
 (Keep sign convention consistent throughout analysis.)
 
@@ -252,11 +265,11 @@ These methods use the **elastic curve relations** directly and are best suited f
 
 ### **Methods included in syllabus (highlighted):**
 
-- <u>**Direct Integration Method**</u>  
+- **Direct Integration Method** 
  
-- <u>**Moment–Area Method**</u>
+- **Moment–Area Method**
 
-- <u>**Conjugate Beam Method**</u>
+- **Conjugate Beam Method**
 
 ### Other geometric approaches:
 - Macaulay’s Method (for discontinuous loads)
@@ -295,11 +308,11 @@ Very useful for beams with multiple segments.
 
 Energy methods are particularly effective for **trusses, frames, and complex loading systems**, where geometric methods become lengthy.
 
-### **Methods included in syllabus:**
+### **Different Energy Methods**
 
-- <u>**Strain Energy Method**</u>  
-- <u>**Castigliano’s Theorem**</u>  
-- <u>**Unit Load Method**</u>  
+- Strain Energy Method 
+- Castigliano’s Theorem  
+- Unit Load Method 
 - Virtual Work Principle  
 - Maxwell–Betti Reciprocal Theorem  
 
@@ -386,20 +399,15 @@ y(x) &= \int\!\!\int \frac{M(x)}{EI}\,dx\,dx
 }
 $$
 
-</div>
+### **Note**
 
-### **Exam Tip**
-
-> In the **Direct Integration Method**,  
-> integrate $M/EI$ **once** to obtain **slope**,  
-> integrate **twice** to obtain **deflection**,  
-> then apply boundary conditions to evaluate constants.
+> In the **Direct Integration Method**, integrate $M/EI$ **once** to obtain **slope**, integrate **twice** to obtain **deflection**, then apply boundary conditions to evaluate constants.
 
 ## Simply Supported Beam with Central Point Load — Double Integration Method
 
 Consider a simply supported beam $AB$ of span $l$ carrying a **central point load** $W$ at midspan $C$.
 
-<img width="443" height="157" alt="image" src="https://github.com/user-attachments/assets/a4ce6ba4-78eb-4861-9565-5e76bc4b84d5" />
+<img width="1088" height="385" alt="image" src="https://github.com/user-attachments/assets/0c54217e-56f4-456a-aa2c-90611778524f" />
 
 *Fig: Simply supported beam with a central point load*
 
@@ -520,8 +528,6 @@ y_{max} &= y_C = -\frac{Wl^3}{48EI}
 \end{aligned}}
 $$
 
-</div>
-
 ## Example Problem — Simply Supported Beam with Central Point Load
 
 ### Problem Statement
@@ -539,7 +545,7 @@ Find:
 - Moment of inertia, $I = 12 \times 10^6 \,\text{mm}^4$  
 - Modulus of elasticity, $E = 200\,\text{GPa} = 200 \times 10^3 \,\text{N/mm}^2$
 
-### Solution
+### Solution:
 
 For a simply supported beam with a central point load:
 
@@ -589,9 +595,6 @@ y_{max} &= 2.34 \text{ mm (downward)}
 \end{aligned}
 }
 $$
-
-</div>
-
 
 ### Exam Tip
 
@@ -658,8 +661,6 @@ or
 $$
 \boxed{W \approx 7.25 \text{ kN}}
 $$
-
-
 
 
 [➤ Go to Index](#index)
