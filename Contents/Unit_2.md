@@ -1274,9 +1274,25 @@ Determine:
 
 *Fig: Simply supported beam with central point load $W$ at $C$, M/EI diagram, and elastic curve*
 
-## Step 1: Reactions and Maximum Moment
+### Problem Statement
 
-By symmetry:
+Determine the **slopes at supports** and **deflection at midspan** for a **simply supported beam** $AB$ of span $L$, subjected to a **central point load $W$** at midspan $C$, using the **Moment–Area Method**.
+
+### Solution:
+
+### Beam and Bending Moment Diagram
+
+<img src="images/ssb_central_load_placeholder.png" width="700"/>
+
+*Fig: Simply supported beam with central point load*
+
+<img src="images/ssb_central_load_bmd_placeholder.png" width="700"/>
+
+*Fig: Triangular bending moment diagram*
+
+### Step 1: Reactions at Supports
+
+Due to symmetry,
 
 $$
 R_A = R_B = \frac{W}{2}
@@ -1285,189 +1301,108 @@ $$
 Maximum bending moment occurs at midspan:
 
 $$
-M_{\max} = \frac{WL}{4}
+M_{max} = \frac{WL}{4}
 $$
 
-Hence the maximum ordinate of the $M/EI$ diagram is:
+The bending moment diagram is triangular on each half.
+
+### Step 2: Area of $M/EI$ Diagram
+
+Consider only half span ($B$ to $C$).
+
+The $M/EI$ diagram is triangular with:
+
+- Base = $\frac{L}{2}$
+- Height = $\frac{WL}{4EI}$
+
+Area of triangle:
 
 $$
-h = \left(\frac{M}{EI}\right)_{\max} = \frac{WL}{4EI}
+A = \frac{1}{2} \times \frac{L}{2} \times \frac{WL}{4EI}
+= \frac{WL^2}{16EI}
 $$
 
-The $M/EI$ diagram consists of **two identical triangles** (one from $A$ to $C$ and one from $C$ to $B$).
 
-## Slopes at Supports ($\theta_A$ and $\theta_B$)
+## Slope at Supports
 
-By symmetry:
+From **Moment–Area Theorem 1**,
 
-$$
-\theta_A = -\theta_B
-$$
+Change in slope between $B$ and $C$ equals area of $M/EI$ diagram.
 
-Also, the slope at midspan is zero (elastic curve is symmetric):
+At midspan,
 
 $$
 \theta_C = 0
 $$
 
-So,
+Hence,
 
 $$
-\theta_{AC} = \theta_C - \theta_A = -\theta_A
-$$
-
-From **Moment–Area Theorem 1**:
-
-$$
-\theta_{AC} = \text{Area of } \left(\frac{M}{EI}\right) \text{ diagram between } A \text{ and } C
-$$
-
-Area of triangular $M/EI$ diagram over $AC$:
-
-Base $= \frac{L}{2}$, Height $= h$
-
-$$
-A_{AC} = \frac{1}{2}\left(\frac{L}{2}\right)h = \frac{Lh}{4}
-$$
-
-Thus,
-
-$$
--\theta_A = \frac{Lh}{4}
-$$
-
-Substitute $h=\frac{WL}{4EI}$:
-
-$$
--\theta_A = \frac{L}{4}\left(\frac{WL}{4EI}\right) = \frac{WL^2}{16EI}
+\theta_B = A
 $$
 
 Therefore,
 
 $$
-\boxed{\theta_A = -\frac{WL^2}{16EI}}
+\boxed{
+\theta_B = \frac{WL^2}{16EI}
+}
 $$
 
-and
+By symmetry,
 
 $$
-\boxed{\theta_B = +\frac{WL^2}{16EI}}
+\boxed{
+\theta_A = \frac{WL^2}{16EI}
+}
 $$
 
-(Sign indicates direction; magnitudes are equal.)
+Rotation directions are opposite at the two supports.
 
-## Deflection at Midspan ($\Delta_C$)
+## Deflection at Midspan
 
-Deflection at $C$ is measured from the tangent at $A$:
+Using **Moment–Area Theorem 2**, deflection of $C$ with respect to tangent at $B$ equals moment of $M/EI$ area between $B$ and $C$ about point $B$.
 
-From **Moment–Area Theorem 2**:
-
-$$
-\Delta_{C/A} = \text{Moment of } \left(\frac{M}{EI}\right)\text{ area between }A\text{ and }C\text{ about }C
-$$
-
-For triangle $AC$:
+Centroid of triangle lies at:
 
 $$
-\Delta_{C/A} = A_{AC}\,\bar{x}
+\frac{1}{3} \times \frac{L}{2} = \frac{L}{6}
 $$
 
-For a triangular area, centroid is at $1/3$ from the larger ordinate end (at $C$).  
-So distance of centroid from $C$ is:
+from the larger ordinate end (midspan).
+
+Distance of centroid from $B$:
 
 $$
-\bar{x} = \frac{1}{3}\left(\frac{L}{2}\right)=\frac{L}{6}
+\frac{L}{2} - \frac{L}{6} = \frac{L}{3}
 $$
 
 Hence,
 
 $$
-\Delta_{C/A} = A_{AC}\left(\frac{L}{6}\right)
-$$
-
-Substitute $A_{AC}=\frac{Lh}{4}$:
-
-$$
-\Delta_{C/A} = \frac{Lh}{4}\cdot\frac{L}{6}=\frac{L^2h}{24}
-$$
-
-Now, actual midspan deflection is the vertical distance from the chord/tangent at $A$ to point $C$.  
-For a simply supported beam, the tangent at $A$ is inclined, but at midspan the deflection equals:
-
-$$
-\Delta_C = \Delta_{C/A} - \left(\text{vertical offset due to slope }\theta_A\right)
-$$
-
-Vertical offset at $C$ due to slope at $A$:
-
-$$
-\text{offset} = \left(\frac{L}{2}\right)\theta_A
-$$
-
-Since $\theta_A$ is negative, subtracting gives:
-
-$$
-\Delta_C = \Delta_{C/A} - \left(\frac{L}{2}\theta_A\right)
-$$
-
-Substitute $\Delta_{C/A}=\frac{L^2h}{24}$ and $\theta_A=-\frac{WL^2}{16EI}$:
-
-First compute $\Delta_{C/A}$ using $h=\frac{WL}{4EI}$:
-
-$$
-\Delta_{C/A}=\frac{L^2}{24}\left(\frac{WL}{4EI}\right)=\frac{WL^3}{96EI}
-$$
-
-Now compute $\left(\frac{L}{2}\theta_A\right)$:
-
-$$
-\frac{L}{2}\theta_A = \frac{L}{2}\left(-\frac{WL^2}{16EI}\right)=-\frac{WL^3}{32EI}
-$$
-
-So,
-
-$$
-\Delta_C = \frac{WL^3}{96EI}-\left(-\frac{WL^3}{32EI}\right)
+\Delta_C = A \times \bar{x}
 $$
 
 $$
-\Delta_C = \frac{WL^3}{96EI}+\frac{WL^3}{32EI}
+\Delta_C = \frac{WL^2}{16EI} \times \frac{L}{3}
 $$
 
-Convert to common denominator:
-
 $$
-\Delta_C = \frac{WL^3}{96EI}+\frac{3WL^3}{96EI}=\frac{4WL^3}{96EI}
-$$
-
-Therefore,
-
-$$
-\boxed{\Delta_C = \frac{WL^3}{24EI}}
+\boxed{
+\Delta_C = \frac{WL^3}{48EI}
+}
 $$
 
-Downward at midspan.
+Deflection is downward.
 
 $$
 \boxed{
 \begin{aligned}
-\theta_A &= -\frac{WL^2}{16EI} \\[6pt]
-\theta_B &= +\frac{WL^2}{16EI} \\[6pt]
+\theta_A &= \theta_B = \frac{WL^2}{16EI} \\
 \Delta_C &= \frac{WL^3}{48EI}
-\end{aligned}}
+\end{aligned}
+}
 $$
-
-</div>
-
-### Notes
-
-- $M/EI$ diagram is **two identical triangles** (symmetry).
-- $\theta_C=0$ at midspan for symmetric loading.
-- Slopes at supports are equal in magnitude and opposite in sign.
-- Maximum deflection occurs at midspan.
-
-<img src="images/ssb_central_pointload_elasticcurve_placeholder.png" width="650"/>
-
 
 
 
