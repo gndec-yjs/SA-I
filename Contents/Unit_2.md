@@ -22,6 +22,7 @@
 - [Methods of Computing Deflections](#methods-of-computing-deflections)
 - [Double Integration Method](#double-integration-method)
 - [Moment Area Method](#moment-area-method)
+- [Conjugate Beam Method](#conjugate-beam-method)
 
 ## Internal Forces in Determinate Structures
 
@@ -1403,6 +1404,8 @@ $$
 \end{aligned}
 }
 $$
+
+## Conjugate Beam Method
 
 
 
