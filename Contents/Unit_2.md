@@ -794,7 +794,8 @@ $$
 
 Determine the **rotation** and **deflection** at the **free end** of a cantilever beam of span $L$, subjected to a **point load $W$** at the free end.
 
-### Solution: 
+### Solution: (Using Area $A$ and First Moment $A\bar{x}$)
+
 
 ### Beam and Bending Moment Diagram
 
@@ -805,6 +806,116 @@ Determine the **rotation** and **deflection** at the **free end** of a cantileve
 <img width="543" height="206" alt="image" src="https://github.com/user-attachments/assets/f374bf7d-d987-45d5-ab37-b9e07af7c70a" />
 
 *Fig: Bending moment diagram for cantilever with end point load*
+
+In Moment–Area Method, we can avoid integration by using:
+
+- **Theorem 1:** Change in slope = **Area** of $M/EI$ diagram  
+  $$ \theta = A $$
+- **Theorem 2:** Deflection = **First moment of area** of $M/EI$ diagram about the point where deflection is measured  
+  $$ \Delta = A\bar{x} $$
+
+## Step 1: $M/EI$ Diagram
+
+For a cantilever with point load $W$ at free end, taking $x$ from the **free end**:
+
+$$
+M(x)=Wx
+$$
+
+Hence $M/EI$ diagram is a **triangle** of base $L$ with maximum ordinate at fixed end:
+
+$$
+h=\left(\frac{M}{EI}\right)_{\max}=\frac{WL}{EI}
+$$
+
+## Rotation at Free End ($\theta_B$)
+
+Slope at fixed end is zero:
+
+$$
+\theta_A = 0
+$$
+
+So rotation at free end:
+
+$$
+\theta_B = \theta_{BA} = \text{Area of } \left(\frac{M}{EI}\right)\text{ diagram}
+$$
+
+Area of triangular $M/EI$ diagram:
+
+$$
+A = \frac{1}{2}\times (\text{base}) \times (\text{height})
+= \frac{1}{2}\times L \times \frac{WL}{EI}
+$$
+
+$$
+\boxed{\theta_B = \frac{WL^2}{2EI}}
+$$
+
+Direction: **clockwise**.
+
+## Deflection at Free End ($\Delta_B$)
+
+Deflection of free end $B$ with respect to tangent at fixed end $A$:
+
+$$
+\Delta_B = A\bar{x}
+$$
+
+For a triangular area, centroid lies at:
+
+- $\bar{x}=\frac{L}{3}$ from the **larger ordinate end** (fixed end), or  
+- $\bar{x}=\frac{2L}{3}$ from the **zero ordinate end** (free end)
+
+Since we need moment about the **fixed end** (larger ordinate end), use:
+
+$$
+\bar{x}=\frac{L}{3}
+$$
+
+Hence,
+
+$$
+\Delta_B = A\bar{x}
+= \left(\frac{1}{2}L\cdot\frac{WL}{EI}\right)\left(\frac{L}{3}\right)
+$$
+
+$$
+\boxed{\Delta_B = \frac{WL^3}{3EI}}
+$$
+
+Direction: **downward**.
+
+## Final Results
+
+$$
+\boxed{
+\begin{aligned}
+\theta_B &= \frac{WL^2}{2EI} \quad \text{(clockwise)} \\[6pt]
+\Delta_B &= \frac{WL^3}{3EI} \quad \text{(downward)}
+\end{aligned}}
+$$
+
+</div>
+
+## Note (Triangle $M/EI$ Diagram)
+
+For a triangular $M/EI$ diagram of base $L$ and maximum ordinate $h$:
+
+- Area: $$A=\frac{1}{2}Lh$$
+- Centroid location: $$\bar{x}=\frac{L}{3}\text{ from larger ordinate end}$$  
+  or $$\bar{x}=\frac{2L}{3}\text{ from zero end}$$
+
+This is the quickest way to apply Moment–Area Method without integration.
+
+---
+
+## OR
+
+---
+
+### Alternative Solution: (Using Integration)
 
 ### Step 1: Bending Moment Expression
 
@@ -904,7 +1015,7 @@ This provides a quick shortcut for moment–area calculations.
 
 Determine the **rotation** and **deflection** at the **free end** of a cantilever beam of span $L$, subjected to a **uniformly distributed load $w$** over the entire length.
 
-### Solution:
+### Solution: (Using Area $A$ and First Moment $A\bar{x}$)
 
 ### Beam and Bending Moment Diagram
 
@@ -915,6 +1026,143 @@ Determine the **rotation** and **deflection** at the **free end** of a cantileve
 <img width="706" height="227" alt="image" src="https://github.com/user-attachments/assets/31f538c4-54d7-41a1-b12b-db67b507eabe" />
 
 *Fig: Parabolic bending moment diagram for cantilever with full UDL*
+
+Moment–Area Theorems:
+
+- **Theorem 1:** Change in slope = **Area** of $M/EI$ diagram  
+  $$\theta = A$$
+- **Theorem 2:** Deflection = **First moment of area** of $M/EI$ diagram about the point where deflection is required  
+  $$\Delta = A\bar{x}$$
+
+## Step 1: $M/EI$ Diagram
+
+For a cantilever with UDL $w$ over entire span, taking $x$ from the **free end**:
+
+$$
+M(x)=\frac{wx^2}{2}
+$$
+
+Maximum bending moment occurs at the fixed end ($x=L$):
+
+$$
+M_{\max}=\frac{wL^2}{2}
+$$
+
+Hence, maximum ordinate of $M/EI$ diagram is:
+
+$$
+h=\left(\frac{M}{EI}\right)_{\max}=\frac{wL^2}{2EI}
+$$
+
+The $M/EI$ diagram is a **parabola** (opening upward) from 0 at free end to $h$ at fixed end.
+
+## Rotation at Free End ($\theta_B$)
+
+Slope at fixed end is zero:
+
+$$
+\theta_A=0
+$$
+
+So, rotation at free end:
+
+$$
+\theta_B = \text{Area of } \left(\frac{M}{EI}\right)\text{ diagram}
+$$
+
+For a parabolic diagram of base $L$ and end ordinate $h$ (zero at one end):
+
+$$
+A=\frac{1}{3}Lh
+$$
+
+Substitute $h=\dfrac{wL^2}{2EI}$:
+
+$$
+\theta_B=\frac{1}{3}L\left(\frac{wL^2}{2EI}\right)
+$$
+
+$$
+\boxed{\theta_B=\frac{wL^3}{6EI}}
+$$
+
+Direction: **clockwise**.
+
+## Deflection at Free End ($\Delta_B$)
+
+Deflection of $B$ with respect to tangent at $A$:
+
+$$
+\Delta_B = A\bar{x}
+$$
+
+For a parabolic area (zero at free end, max at fixed end), centroid lies at:
+
+$$
+\bar{x}=\frac{3L}{4}
+$$
+
+measured from the **zero ordinate end** (free end).  
+Therefore, from the **fixed end**, centroid distance is:
+
+$$
+\bar{x}_{A}=L-\frac{3L}{4}=\frac{L}{4}
+$$
+
+Since we need the **moment about the fixed end**, use $\bar{x}_A = \dfrac{L}{4}$:
+
+$$
+\Delta_B = A\left(\frac{L}{4}\right)
+$$
+
+Substitute $A=\dfrac{1}{3}Lh$ and $h=\dfrac{wL^2}{2EI}$:
+
+$$
+\Delta_B=\left(\frac{1}{3}L\cdot\frac{wL^2}{2EI}\right)\left(\frac{L}{4}\right)
+$$
+
+$$
+\boxed{\Delta_B=\frac{wL^4}{8EI}}
+$$
+
+Direction: **downward**.
+
+$$
+\boxed{
+\begin{aligned}
+\theta_B &= \frac{wL^3}{6EI} \quad \text{(clockwise)} \\[6pt]
+\Delta_B &= \frac{wL^4}{8EI} \quad \text{(downward)}
+\end{aligned}}
+$$
+
+</div>
+
+## Note (Parabolic $M/EI$ Diagram Quick Geometry)
+
+For a parabolic $M/EI$ diagram with:
+
+- base $=L$
+- zero ordinate at one end
+- maximum ordinate $=h$ at the other end
+
+Then:
+
+$$
+A=\frac{1}{3}Lh
+$$
+
+Centroid location:
+
+- $\bar{x}=\frac{3L}{4}$ from the **zero ordinate end**
+- $\bar{x}=\frac{L}{4}$ from the **maximum ordinate end**
+
+---
+
+## OR
+
+---
+
+### Alternative Solution (Using Integration)
 
 ### Step 1: Bending Moment Expression
 
@@ -1007,6 +1255,220 @@ For a **parabolic $M/EI$ diagram**:
 - **Centroid** lies at **$3L/4$** from the end where ordinate is zero
 
 This simplifies manual calculations in moment–area problems.
+
+## Example — Simply Supported Beam with Central Point Load (Moment–Area Method)
+
+### Problem Statement
+
+A simply supported beam $AB$ of span $L$ carries a **central point load $W$** at midspan $C$.  
+Determine:
+
+- Slopes at the supports: $\theta_A$ and $\theta_B$  
+- Deflection at midspan: $\Delta_C$
+
+### Solution:
+
+### Beam and Bending Moment Diagram
+
+<img width="575" height="935" alt="image" src="https://github.com/user-attachments/assets/a07e5256-b18e-44f0-83d9-6227125a0c80" />
+
+*Fig: Simply supported beam with central point load $W$ at $C$, M/EI diagram, and elastic curve*
+
+## Step 1: Reactions and Maximum Moment
+
+By symmetry:
+
+$$
+R_A = R_B = \frac{W}{2}
+$$
+
+Maximum bending moment occurs at midspan:
+
+$$
+M_{\max} = \frac{WL}{4}
+$$
+
+Hence the maximum ordinate of the $M/EI$ diagram is:
+
+$$
+h = \left(\frac{M}{EI}\right)_{\max} = \frac{WL}{4EI}
+$$
+
+The $M/EI$ diagram consists of **two identical triangles** (one from $A$ to $C$ and one from $C$ to $B$).
+
+## Slopes at Supports ($\theta_A$ and $\theta_B$)
+
+By symmetry:
+
+$$
+\theta_A = -\theta_B
+$$
+
+Also, the slope at midspan is zero (elastic curve is symmetric):
+
+$$
+\theta_C = 0
+$$
+
+So,
+
+$$
+\theta_{AC} = \theta_C - \theta_A = -\theta_A
+$$
+
+From **Moment–Area Theorem 1**:
+
+$$
+\theta_{AC} = \text{Area of } \left(\frac{M}{EI}\right) \text{ diagram between } A \text{ and } C
+$$
+
+Area of triangular $M/EI$ diagram over $AC$:
+
+Base $= \frac{L}{2}$, Height $= h$
+
+$$
+A_{AC} = \frac{1}{2}\left(\frac{L}{2}\right)h = \frac{Lh}{4}
+$$
+
+Thus,
+
+$$
+-\theta_A = \frac{Lh}{4}
+$$
+
+Substitute $h=\frac{WL}{4EI}$:
+
+$$
+-\theta_A = \frac{L}{4}\left(\frac{WL}{4EI}\right) = \frac{WL^2}{16EI}
+$$
+
+Therefore,
+
+$$
+\boxed{\theta_A = -\frac{WL^2}{16EI}}
+$$
+
+and
+
+$$
+\boxed{\theta_B = +\frac{WL^2}{16EI}}
+$$
+
+(Sign indicates direction; magnitudes are equal.)
+
+## Deflection at Midspan ($\Delta_C$)
+
+Deflection at $C$ is measured from the tangent at $A$:
+
+From **Moment–Area Theorem 2**:
+
+$$
+\Delta_{C/A} = \text{Moment of } \left(\frac{M}{EI}\right)\text{ area between }A\text{ and }C\text{ about }C
+$$
+
+For triangle $AC$:
+
+$$
+\Delta_{C/A} = A_{AC}\,\bar{x}
+$$
+
+For a triangular area, centroid is at $1/3$ from the larger ordinate end (at $C$).  
+So distance of centroid from $C$ is:
+
+$$
+\bar{x} = \frac{1}{3}\left(\frac{L}{2}\right)=\frac{L}{6}
+$$
+
+Hence,
+
+$$
+\Delta_{C/A} = A_{AC}\left(\frac{L}{6}\right)
+$$
+
+Substitute $A_{AC}=\frac{Lh}{4}$:
+
+$$
+\Delta_{C/A} = \frac{Lh}{4}\cdot\frac{L}{6}=\frac{L^2h}{24}
+$$
+
+Now, actual midspan deflection is the vertical distance from the chord/tangent at $A$ to point $C$.  
+For a simply supported beam, the tangent at $A$ is inclined, but at midspan the deflection equals:
+
+$$
+\Delta_C = \Delta_{C/A} - \left(\text{vertical offset due to slope }\theta_A\right)
+$$
+
+Vertical offset at $C$ due to slope at $A$:
+
+$$
+\text{offset} = \left(\frac{L}{2}\right)\theta_A
+$$
+
+Since $\theta_A$ is negative, subtracting gives:
+
+$$
+\Delta_C = \Delta_{C/A} - \left(\frac{L}{2}\theta_A\right)
+$$
+
+Substitute $\Delta_{C/A}=\frac{L^2h}{24}$ and $\theta_A=-\frac{WL^2}{16EI}$:
+
+First compute $\Delta_{C/A}$ using $h=\frac{WL}{4EI}$:
+
+$$
+\Delta_{C/A}=\frac{L^2}{24}\left(\frac{WL}{4EI}\right)=\frac{WL^3}{96EI}
+$$
+
+Now compute $\left(\frac{L}{2}\theta_A\right)$:
+
+$$
+\frac{L}{2}\theta_A = \frac{L}{2}\left(-\frac{WL^2}{16EI}\right)=-\frac{WL^3}{32EI}
+$$
+
+So,
+
+$$
+\Delta_C = \frac{WL^3}{96EI}-\left(-\frac{WL^3}{32EI}\right)
+$$
+
+$$
+\Delta_C = \frac{WL^3}{96EI}+\frac{WL^3}{32EI}
+$$
+
+Convert to common denominator:
+
+$$
+\Delta_C = \frac{WL^3}{96EI}+\frac{3WL^3}{96EI}=\frac{4WL^3}{96EI}
+$$
+
+Therefore,
+
+$$
+\boxed{\Delta_C = \frac{WL^3}{24EI}}
+$$
+
+Downward at midspan.
+
+$$
+\boxed{
+\begin{aligned}
+\theta_A &= -\frac{WL^2}{16EI} \\[6pt]
+\theta_B &= +\frac{WL^2}{16EI} \\[6pt]
+\Delta_C &= \frac{WL^3}{48EI}
+\end{aligned}}
+$$
+
+</div>
+
+### Notes
+
+- $M/EI$ diagram is **two identical triangles** (symmetry).
+- $\theta_C=0$ at midspan for symmetric loading.
+- Slopes at supports are equal in magnitude and opposite in sign.
+- Maximum deflection occurs at midspan.
+
+<img src="images/ssb_central_pointload_elasticcurve_placeholder.png" width="650"/>
+
+
 
 
 
