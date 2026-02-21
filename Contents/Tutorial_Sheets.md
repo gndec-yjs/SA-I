@@ -6,7 +6,7 @@
 | [Tutorial Sheet-1](Tutorial_Sheet/1.md) | Shear Force & Bending Moment Diagrams | Jan 24, 2026 (Saturday) — 11:59 PM | Jan 31, 2026 (Saturday) — 11:59 PM |
 |  [Tutorial Sheet-2](Tutorial_Sheet/2.md) | Statical Determinacy & Degree of Redundancy | Jan 31, 2026 (Saturday) — 11:59 PM  | Feb 07, 2026 (Saturday) — 11:59 PM  |
 | [Tutorial Sheet-3](Tutorial_Sheet/3.md) | Beam Slopes and Deflections | Feb 07, 2026 (Saturday) — 11:59 PM  | Feb 14, 2026 (Saturday) — 11:59 PM  |
-| Tutorial Sheet-4 | *Coming Soon* | - | - |
+| [Tutorial Sheet-4](Tutorial_Sheet/4.md) | Deflection of Beams & Frames using Energy Methods (or as mentioned) |Feb 28, 2026 (Saturday) — 11:59 PM  | Feb 28, 2026 (Saturday) — 11:59 PM  |
 | Tutorial Sheet-5 | *Coming Soon* | - | - |
 
 ---
