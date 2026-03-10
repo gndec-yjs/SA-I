@@ -11,7 +11,7 @@
 
 |    Assignment     |     Topic     |     Deadline (for D2 CE A)     | Deadline (for B.Tech. CE Working Professionals) |
 |-----------------|-------- | --------- | --------- |
-| [Assignment 1](Assignment/1.md) | Basic Concepts, Beam Analysis and Deflection Methods (Part A) | March 14, 2026 (Saturday) — 11:59 PM | March 14, 2026 (Saturday) — 11:59 PM |
+| [Assignment-1](Assignment/1.md) | Basic Concepts, Beam Analysis and Deflection Methods (Part A) | March 14, 2026 (Saturday) — 11:59 PM | March 14, 2026 (Saturday) — 11:59 PM |
 
 
 ---
