@@ -1,6 +1,6 @@
 # Structural Analysis - I
 
-| **[Contents](Contents/Content.md)** | **[Syllabus](Contents/Syllabus.md)** | **[Assignments / Tutorial Sheets](Contents/Tutorial_Sheets.md)** | **[Contact](Contents/Contact.md)** | 
+| **[Contents](Contents/Content.md)** | **[Syllabus](Contents/Syllabus.md)** | **[Assignments & Tutorial Sheets](Contents/Tutorial_Sheets.md)** | **[Contact](Contents/Contact.md)** | 
 
 <span style="color:red; font-weight:bold; animation: blinker 1s linear infinite;">
 🚨 **New Tutorial Sheets are now available. For details on due dates and submission instructions — [Click Here](Contents/Tutorial_Sheets.md)**
