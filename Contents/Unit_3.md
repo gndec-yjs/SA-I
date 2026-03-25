@@ -202,6 +202,106 @@ $$
 
 where $M$ is the bending moment in the corresponding beam and $y$ is the vertical ordinate of the cable.
 
+## Cable Subjected to Concentrated Loads
+
+Consider a cable of length $L$ spanning over a horizontal distance $l$, subjected to a system of **concentrated loads** as shown in the figure.
+
+<img width="830" height="386" alt="image" src="https://github.com/user-attachments/assets/3b057771-59a2-4179-8793-c3177dad2d59" />
+
+*Figure: Cable subjected to concentrated loads*
+
+Let:
+- $V_A$, $V_B$ = vertical reactions at supports $A$ and $B$  
+- $H$ = horizontal component of cable tension (constant)  
+
+### Fundamental Relation
+
+From equilibrium of the cable:
+
+$$
+H y = M_{\text{beam}} \quad \text{or} \quad y = \frac{M_{\text{beam}}}{H}
+$$
+
+#### Key Interpretation
+
+> The **shape of the cable** under concentrated loads is **similar to the bending moment diagram** of a simply supported beam carrying the same loads.
+
+### Deflection at Load Points
+
+If:
+- $M_1$, $M_2$, $M_3$ = bending moments at load points (from equivalent beam)  
+
+Then corresponding cable deflections are:
+
+$$
+y_1 = \frac{M_1}{H}, \quad
+y_2 = \frac{M_2}{H}, \quad
+y_3 = \frac{M_3}{H}
+$$
+
+### Description of Cable System
+
+The cable is supported at points $A$ and $B$ with:
+
+- Horizontal reaction: $H$  
+- Vertical reactions: $V_A$, $V_B$  
+
+The cable is divided into multiple straight segments due to concentrated loads:
+
+- Segment tensions: $T_1$, $T_2$, $T_3$, $T_4$  
+
+Intermediate points:
+
+- Point 1: Load $W_1$, deflection $y_1$  
+- Point 2: Load $W_2$, deflection $y_2$  
+- Point 3: Load $W_3$, deflection $y_3$  
+
+### Determination of Cable Shape
+
+If either:
+
+- Horizontal thrust $H$ is known, **or**  
+- Deflection at any one point is known  
+
+then:
+
+- Deflections at all other points can be calculated  
+- Complete **cable profile (shape)** can be obtained  
+
+### Length of Cable
+
+The actual length of the cable is obtained as:
+
+> Sum of lengths of individual straight segments between load points.
+
+### Determination of Tension in Cable Segments
+
+After finding deflections:
+
+1. Determine slopes of each segment  
+2. Apply equilibrium at load points:
+
+$$
+\sum F_x = 0, \quad \sum F_y = 0
+$$
+
+3. Compute forces in segments:
+
+$$
+T_1,\; T_2,\; T_3,\; T_4
+$$
+
+### Important Insight
+
+> A cable subjected to concentrated loads forms a **polygonal shape**, unlike smooth curves seen in UDL cases.
+
+### Note
+
+> Always:
+- First analyze the **equivalent beam**  
+- Then use $y = \dfrac{M}{H}$ to get cable profile  
+- Finally compute **tensions using joint equilibrium**
+
 ---
 
 ## Shape of Cable
