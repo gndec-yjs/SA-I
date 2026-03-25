@@ -15,6 +15,7 @@
 
 ### Index
 - [Cables – Introduction](#cables--introduction)
+- [Equilibrium of Cable](#equilibrium_of_cable)
 - [General Cable Theorem](#general-cable-theorem)
 - [Shape of Cable](#shape-of-cable)
 - [Tension in Cables](#tension-in-cables)
@@ -30,13 +31,11 @@
 
 ## Cables – Introduction
 
-## Cables – Introduction
-
 Cables are widely used in engineering structures both as **temporary supporting elements** and as **permanent load-carrying members**. During construction, cables act as **guys** to stabilize structures such as masts, towers, and erection systems. In many practical situations—such as circus tents or temporary shelters—guy cables are commonly used to provide stability and maintain structural form.
 
 In permanent structures, cables play a crucial role in systems like **suspension bridges**, where they support the primary load of the structure. Towers are used to support these cables, and the load is transferred through **suspenders** to the roadway or deck.
 
-<img width="932" height="450" alt="image" src="https://github.com/user-attachments/assets/c5ea796f-f66f-46f6-a6b7-b00abbb523d3" />
+<img width="809" height="362" alt="image" src="https://github.com/user-attachments/assets/169e6411-53b2-4532-8b9d-3c5eb08bcc83" />
 
 *Figure: Typical suspension bridge showing cable, towers, suspenders, and roadway*
 
@@ -49,13 +48,51 @@ Depending on support conditions, cables may pass over towers through:
 - **Guided pulley supports**, or  
 - **Roller supports**
 
-<img width="1518" height="533" alt="image" src="https://github.com/user-attachments/assets/f34339c7-d325-44b6-a17e-60ff32763cd2" />
+<img width="1312" height="456" alt="image" src="https://github.com/user-attachments/assets/abcc5bc1-3c2b-422d-84fe-f5d2e85827a1" />
 
 *Figure: Types of cable supports – Guided Pulley and Saddle on Rollers/Smooth Rollers support*
 
+**Conceptually:**
+
+A cable passing over a tower must be able to adjust its position and tension as loads change. Different support types allow this in different ways.
+
+- **Roller / Pulley Support**
+
+In roller or pulley supports, the cable:
+
+physically moves/rolls over the support
+reduces friction
+allows free adjustment of tension on both sides
+
+_Think of it like a rope passing over a smooth wheel._
+
+**Effect:**
+
+Tension on both sides of the tower tends to be equal (or nearly equal)
+Used in idealized analysis
+
+- **Saddle Support (Real Practice)**
+
+A saddle is what is actually used in real suspension bridges.
+
+It is a curved seating (grooved block) placed on top of the tower
+The cable rests on it, not freely rolling like a pulley
+May allow limited movement, but not full rolling
+
+_Think of it like a shaped support where the cable sits and slightly slides._
+
+- **Key Differences**
+
+| Feature          | Roller/Pulley           | Saddle                |
+| ---------------- | ----------------------- | --------------------- |
+| Movement         | Free rolling            | Limited sliding       |
+| Friction         | Very low (idealized)    | Some friction present |
+| Tension equality | Nearly equal both sides | May differ slightly   |
+| Usage            | Theoretical problems    | Real bridges          |
+
 In bridges carrying pedestrian or vehicular loads, a **stiffening girder** is often provided below the roadway. This helps in distributing loads more uniformly and reduces excessive deformation of the cable.
 
-<img width="813" height="419" alt="image" src="https://github.com/user-attachments/assets/ed2cfd11-1c0f-4af5-80a1-3b94e0404ca4" />
+<img width="808" height="386" alt="image" src="https://github.com/user-attachments/assets/91a488e3-9abd-4cb0-bcdd-7252bb71690d" />
 
 *Figure: Stiffening girder in a suspension bridge system*
 
@@ -75,7 +112,70 @@ Examples:
 
 When subjected to loads, a cable assumes a shape such that it remains entirely in **tension**.
 
----
+## Equilibrium of Cable
+
+A **cable** is a flexible structural element which **cannot resist bending moment**. When subjected to loads, it adjusts its shape such that the **bending moment at every point is zero**. This condition is achieved by the development of a **horizontal thrust** at the supports, along with corresponding vertical reactions, resulting in an appropriate cable profile.
+
+<img width="872" height="363" alt="image" src="https://github.com/user-attachments/assets/11a81fb3-da19-4aba-8535-131dcd568ea6" />
+
+*Figure: Equilibrium of a cable under concentrated loads*
+
+Consider a cable subjected to a system of loads. Let:
+
+- $H$ = horizontal component of cable tension (constant throughout)  
+- $V_A$, $V_B$ = vertical reactions at supports $A$ and $B$  
+- At a section $X - X$, let the vertical deflection (ordinate) be $y$  
+
+Using the analogy of a **simply supported beam**, the bending moment at section $X - X$ can be written as:
+
+$$
+M_x = V_A x - W_1(x - a_1) - W_2(x - a_2) - H y
+$$
+
+Since the cable is perfectly flexible,
+
+$$
+M_x = 0
+$$
+
+Therefore,
+
+$$
+H_y = V_A x - W_1(x - a_1) - W_2(x - a_2) = Beam Moment
+$$
+
+> Considering any segment of cable and using the above equation alone with usual equations, a loaded cable can be analyzed. This equation relates the **shape of the cable** (through $y$) to the applied loads and support reactions.
+
+#### Key Concept
+
+> The equilibrium of a cable can be analysed by treating it as an **equivalent simply supported beam**, where:
+
+- The **bending moment in beam** = $H \cdot y$ in cable  
+- The **shear force in beam** = slope of cable  
+
+#### General Approach for Cable Analysis
+
+1. Determine **support reactions** using equilibrium:
+   $$
+   \sum V = 0,\quad \sum M = 0
+   $$
+
+2. Write the **beam moment equation** at a section.
+
+3. Use the condition:
+   $$
+   M = 0 \quad \Rightarrow \quad Hy = \text{beam moment}
+   $$
+
+4. Obtain the **equation of cable profile**.
+
+#### Important Note
+
+> A loaded cable is always analysed using:
+- **Equilibrium equations**, and  
+- **Beam analogy (moment relationship)**  
+
+This simplifies the analysis of cables under different loading conditions.
 
 ## General Cable Theorem
 
