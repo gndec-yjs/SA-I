@@ -102,10 +102,11 @@ Because of these advantages, suspension bridges are highly economical for **long
 
 Well-known examples of suspension bridges include structures like **Laxman Jhula at Rishikesh** and the **Howrah Bridge**, which demonstrate the practical application and efficiency of cable-supported systems.
 
-Q: Define Cable. Give suitable examples.
-A: A **cable** is a flexible structural element that can carry **tension only** and has negligible resistance to bending or compression.
+##### Q: Define Cable. Give suitable examples. 
 
-Examples:
+**Ans:** A **cable** is a flexible structural element that can carry **tension only** and has negligible resistance to bending or compression.
+
+_Examples:_
 - Suspension bridges  
 - Transmission lines  
 - Cable roofs  
