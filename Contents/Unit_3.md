@@ -332,7 +332,7 @@ $$
 Taking moments about the lowest (central) point of the cable and using the condition that **bending moment in a cable is zero**, we obtain:
 
 $$
-Hh - \frac{w l}{2}\cdot\frac{l}{2} - \frac{w l}{2}\cdot\frac{l}{4} = 0
++ \frac{w l}{2}\cdot\frac{l}{2} - \frac{w l}{2}\cdot\frac{l}{4} - Hh = 0
 $$
 
 Therefore,
