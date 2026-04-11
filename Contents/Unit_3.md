@@ -17,6 +17,9 @@
 - [Cables – Introduction](#cables--introduction)
 - [Equilibrium of Cable](#equilibrium_of_cable)
 - [General Cable Theorem](#general-cable-theorem)
+- [Cable Subjected to Concentrated Loads](#cable-subjected-to-concentrated-loads)
+- [Cable Subjected to a Uniformly Distributed Load](#cable-subjected-to-a-uniformly-distributed-load)
+- [Cable with Ends at Different Levels](#cable-with-ends-at-different-levels)
 - [Shape of Cable](#shape-of-cable)
 - [Tension in Cables](#tension-in-cables)
 - [Elastic Stretch of Cable](#elastic-stretch-of-cable)
@@ -474,6 +477,202 @@ $$
 ## Key Insight
 
 > A cable under **UDL per horizontal length behaves like a parabola**, and its analysis can be directly linked to the **bending moment diagram of an equivalent simply supported beam**.
+
+---
+
+## Cable with Ends at Different Levels
+
+Consider a cable supported at two points **A** and **B**, which are at different heights above the lowest point **C**.  
+The cable carries a **uniformly distributed load $w$ per unit horizontal length** over the entire span $l$.
+
+- Horizontal distance:
+  - $AC = l_1$
+  - $CB = l_2$
+- Vertical distances:
+  - $AC = h_1$
+  - $BC = h_2$
+
+The **horizontal reaction** at both supports is:
+
+$$
+H = \text{constant}
+$$
+
+Since a cable can resist **only axial tension**, it cannot resist bending moment or shear force.  
+At the lowest point $C$:
+
+- Vertical force = 0  
+- Tension = $H$  
+
+<img width="732" height="445" alt="image" src="https://github.com/user-attachments/assets/76bfe94a-71e3-481b-81f2-fd2870a04b18" />
+**Figure:** Cable with supports at different levels  
+
+<img width="696" height="291" alt="image" src="https://github.com/user-attachments/assets/7e68c4d6-9948-4dad-93e0-25408eb2e754" />
+**Figure:** Free body diagram of cable
+
+### Equilibrium of Cable Segment
+
+Let $D$ be any point on the cable where the slope is $\theta$.  
+Taking point $C$ as origin and considering equilibrium of segment $CD$:
+
+$$
+T \cos \theta = H
+$$
+
+$$
+T \sin \theta = wx
+$$
+
+Dividing,
+
+$$
+\tan \theta = \frac{wx}{H}
+$$
+
+Since,
+
+$$
+\tan \theta = \frac{dy}{dx}
+$$
+
+we get:
+
+$$
+\frac{dy}{dx} = \frac{wx}{H}
+$$
+
+### Equation of Cable Shape
+
+Integrating,
+
+$$
+y = \frac{w x^2}{2H} + C_1
+$$
+
+At lowest point $C$:
+
+$$
+x = 0, \quad y = 0
+$$
+
+Therefore,
+
+$$
+C_1 = 0
+$$
+
+Hence,
+
+$$
+\boxed{y = \frac{w x^2}{2H}}
+$$
+
+This represents a **parabola**, hence the cable takes a **parabolic shape**.
+
+### Relations at Supports
+
+Applying the equation at supports:
+
+$$
+h_1 = \frac{w l_1^2}{2H}, \quad h_2 = \frac{w l_2^2}{2H}
+$$
+
+Taking ratio:
+
+$$
+\frac{h_1}{h_2} = \frac{l_1^2}{l_2^2}
+$$
+
+$$
+\frac{\sqrt{h_1}}{\sqrt{h_2}} = \frac{l_1}{l_2}
+$$
+
+Hence,
+
+$$
+\frac{l_1}{l} = \frac{\sqrt{h_1}}{\sqrt{h_1} + \sqrt{h_2}}
+$$
+
+$$
+\boxed{
+l_1 = l \left( \frac{\sqrt{h_1}}{\sqrt{h_1} + \sqrt{h_2}} \right)
+}
+$$
+
+$$
+\boxed{
+l_2 = l \left( \frac{\sqrt{h_2}}{\sqrt{h_1} + \sqrt{h_2}} \right)
+}
+$$
+
+### Determination of Horizontal Thrust $H$
+
+Taking moments about point $C$:
+
+#### From left side:
+
+$$
+V_A l_1 - H h_1 - \frac{w l_1^2}{2} = 0
+$$
+
+$$
+V_A = \frac{w l_1}{2} + \left(\frac{h_1}{l_1}\right) H \quad ...(i)
+$$
+
+#### From right side:
+
+$$
+V_B l_2 - H h_2 - \frac{w l_2^2}{2} = 0
+$$
+
+$$
+V_B = \frac{w l_2}{2} + \left(\frac{h_2}{l_2}\right) H \quad ...(ii)
+$$
+
+Adding:
+
+$$
+V_A + V_B = \frac{w}{2}(l_1 + l_2) + \left(\frac{h_1}{l_1} + \frac{h_2}{l_2}\right)H
+$$
+
+But total load:
+
+$$
+V_A + V_B = wl
+$$
+
+Therefore,
+
+$$
+\frac{wl}{2} = \left(\frac{h_1}{l_1} + \frac{h_2}{l_2}\right)H
+$$
+
+Substituting values of $l_1$ and $l_2$:
+
+$$
+\boxed{
+H = \frac{w l^2}{2(\sqrt{h_1} + \sqrt{h_2})^2}
+}
+$$
+
+### Length of Cable
+
+Total cable length:
+
+$$
+L = l + \frac{2}{3}\frac{h_1^2}{l_1} + \frac{2}{3}\frac{h_2^2}{l_2}
+$$
+
+### Key Takeaways
+
+- Cable assumes a **parabolic shape under UDL**
+- Lowest point carries **only horizontal tension**
+- Horizontal thrust depends on **span and support heights**
+- Unequal support levels shift lowest point away from center
+
+### Exam Tip
+
+> In cables with different support levels, always take the **lowest point as origin** — it simplifies equations significantly.
 
 ---
 
