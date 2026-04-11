@@ -278,14 +278,14 @@ The actual length of the cable is obtained as:
 
 After finding deflections:
 
-1. Determine slopes of each segment  
-2. Apply equilibrium at load points:
+1) Determine slopes of each segment  
+2) Apply equilibrium at load points:
 
 $$
 \sum F_x = 0, \quad \sum F_y = 0
 $$
 
-3. Compute forces in segments:
+3) Compute forces in segments:
 
 $$
 T_1,\; T_2,\; T_3,\; T_4
@@ -301,6 +301,179 @@ $$
 - First analyze the **equivalent beam**  
 - Then use $y = \dfrac{M}{H}$ to get cable profile  
 - Finally compute **tensions using joint equilibrium**
+
+---
+
+## Cable Subjected to a Uniformly Distributed Load
+
+Consider a cable of length $L$ supported at points $A$ and $B$ at the same level, separated by a horizontal distance $l$. The cable carries a **uniformly distributed load $w$ per unit horizontal length**.
+
+<img width="693" height="327" alt="image" src="https://github.com/user-attachments/assets/4a0fd897-8fa8-4fac-8f62-6d7d0e8b277b" />
+
+*Figure: Cable subjected to UDL*
+
+<img width="603" height="309" alt="image" src="https://github.com/user-attachments/assets/60235324-e65a-42af-854e-f8dc6529e1c2" />
+
+*Figure: Free body diagram of Cable*
+
+## Support Reactions
+
+By symmetry,
+
+$$
+V_A = V_B = \frac{w l}{2}
+$$
+
+## Horizontal Thrust
+
+Taking moments about the lowest (central) point of the cable and using the condition that **bending moment in a cable is zero**, we obtain:
+
+$$
+Hh - \frac{w l}{2}\cdot\frac{l}{2} - \frac{w l}{2}\cdot\frac{l}{4} = 0
+$$
+
+Therefore,
+
+$$
+\boxed{H = \frac{w l^2}{8h}}
+$$
+
+where $h$ is the central sag of the cable.
+
+## Shear and Tension in Cable
+
+At any section $X\!-\!X$ at a distance $x$ from support $A$:
+
+$$
+T = \sqrt{V^2 + H^2}
+$$
+
+Maximum shear occurs at supports:
+
+$$
+V_{\max} = \frac{w l}{2}
+$$
+
+Maximum tension:
+
+$$
+T_{\max} = \sqrt{\left(\frac{w l}{2}\right)^2 + \left(\frac{w l^2}{8 h}\right)^2}
+$$
+
+Minimum shear occurs at centre:
+
+$$
+V_{\min} = 0
+$$
+
+Minimum tension:
+
+$$
+T_{\min} = H
+$$
+
+## Equilibrium at Section
+
+At any section:
+
+$$
+\sum H = 0 \Rightarrow T \cos \theta = H
+$$
+
+$$
+\sum V = 0 \Rightarrow T \sin \theta = V_A - wx = \frac{w l}{2} - wx
+$$
+
+Therefore,
+
+$$
+\tan \theta = \frac{\frac{w l}{2} - wx}{H}
+$$
+
+## Equation of Cable Profile
+
+Since,
+
+$$
+\frac{dy}{dx} = \tan \theta
+$$
+
+$$
+\frac{dy}{dx} = \left(\frac{w l}{2} - wx\right)\frac{1}{H}
+$$
+
+Integrating:
+
+$$
+y = \left[\frac{w l}{2}x - \frac{w x^2}{2}\right]\frac{1}{H}
+$$
+
+$$
+y = \frac{w x (l - x)}{2H}
+$$
+
+Substituting $H = \dfrac{w l^2}{8h}$:
+
+$$
+y = \frac{w x (l - x)}{2} \cdot \frac{8h}{w l^2}
+$$
+
+$$
+\boxed{y = \frac{4h x (l - x)}{l^2}}
+$$
+
+## Shape of Cable
+
+> The above equation represents a **parabola**.
+
+Hence, a cable subjected to **UDL per horizontal length assumes a parabolic shape**.
+
+
+## Length of Cable
+
+For any curve:
+
+$$
+\frac{ds}{dx} = \sqrt{1 + \left(\frac{dy}{dx}\right)^2}
+$$
+
+Using approximation:
+
+$$
+\frac{ds}{dx} \approx 1 + \frac{1}{2}\left(\frac{dy}{dx}\right)^2
+$$
+
+Substituting slope expression and integrating:
+
+$$
+L = \int_0^l ds
+$$
+
+$$
+L = l + \frac{8h^2}{3l}
+$$
+
+## Important Results Summary
+
+$$
+H = \frac{w l^2}{8h}
+$$
+
+$$
+y = \frac{4h x (l - x)}{l^2}
+$$
+
+$$
+T_{\max} = \sqrt{\left(\frac{w l}{2}\right)^2 + \left(\frac{w l^2}{8 h}\right)^2}
+$$
+
+$$
+T_{\min} = H
+$$
+
+## Key Insight
+
+> A cable under **UDL per horizontal length behaves like a parabola**, and its analysis can be directly linked to the **bending moment diagram of an equivalent simply supported beam**.
 
 ---
 
