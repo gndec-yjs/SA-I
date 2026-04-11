@@ -360,11 +360,11 @@ $$
 Maximum tension:
 
 $$
-T_{\max} = \sqrt{\left(\frac{w l}{2}\right)^2 + \left(\frac{l^2}{16^2}\right)}
+T_{\max} = \sqrt{\left(\frac{w l}{2}\right)^2 + \left(\frac{w l^2}{8h}\right)^2}
 $$
 
 $$
-T_{\max} = \frac{w l}{2} \sqrt{\left(1 + \left(\frac{w l^2}{8 h}\right)^2}
+T_{\max} = \frac{w l}{2} \sqrt{1 + \frac{l^2}{16h^2}}
 $$
 
 Minimum shear occurs at centre:
