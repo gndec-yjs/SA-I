@@ -13,6 +13,14 @@
 |-----------------|-------- | --------- | --------- |
 | [Assignment-1](Assignment/1.md) | Basic Concepts, Beam Analysis and Deflection Methods (Part A) | March 14, 2026 (Saturday) — 11:59 PM | March 14, 2026 (Saturday) — 11:59 PM |
 
+---
+
+## Part-B
+
+| Tutorial Sheet |     Topic     |     Deadline (for D2 CE A)     | Deadline (for B.Tech. CE Working Professionals) |
+|-------|-------- | --------- | --------- |
+| [Tutorial Sheet-5](Tutorial_Sheet/5.md) | Cables and Suspension Bridges  | May 03, 2026 (Sunday) — 11:59 PM | May 03, 2026 (Sunday) — 11:59 PM |
+
 
 ---
 
