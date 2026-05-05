@@ -20,6 +20,7 @@
 | Tutorial Sheet |     Topic     |     Deadline (for D2 CE A)     | Deadline (for B.Tech. CE Working Professionals) |
 |-------|-------- | --------- | --------- |
 | [Tutorial Sheet-5](Tutorial_Sheet/5.md) | Cables and Suspension Bridges  | May 03, 2026 (Sunday) — 11:59 PM | May 03, 2026 (Sunday) — 11:59 PM |
+| [Tutorial Sheet-6](Tutorial_Sheet/6.md) | Analysis of Trusses (determinate cases only)  | May 09, 2026 (Saturday) — 11:59 PM | May 09, 2026 (Saturday) — 11:59 PM |
 
 
 ---
